@@ -1,0 +1,129 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Blog — Internamente Hablando</title>
+  <meta name="description" content="Reflexiones sobre comunicación, liderazgo y equipos. Desde dentro de las organizaciones.">
+  <meta name="author" content="Marilena Sánchez">
+
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:ital,wght@0,400;0,500;0,700;1,400;1,500&family=DM+Sans:wght@400;500&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="../css/styles.css">
+</head>
+<body>
+
+  <!-- ===== NAV =========================================== -->
+  <nav class="nav" aria-label="Navegación principal">
+    <div class="nav__inner">
+      <a href="../index.html" class="nav__logo">internamente hablando</a>
+      <button class="nav__toggle" id="navToggle" aria-expanded="false" aria-controls="navLinks" aria-label="Abrir menú">
+        <span></span><span></span><span></span>
+      </button>
+      <ul class="nav__links" id="navLinks" role="list">
+        <li><a href="../blog/index.html" class="activo">Blog</a></li>
+        <li><a href="../sobre-mi/index.html">Sobre mí</a></li>
+        <li><a href="../colaboraciones/index.html">Colaboraciones</a></li>
+        <li><a href="../recursos/index.html">Recursos</a></li>
+      </ul>
+      <a href="../newsletter/index.html" class="nav__cta">Newsletter</a>
+    </div>
+  </nav>
+
+  <main>
+
+    <!-- ===== HERO ========================================= -->
+    <section class="hero" style="padding-bottom: var(--space-2xl);">
+      <div class="hero__inner">
+        <span class="hero__etiqueta">Blog</span>
+        <h1 style="font-size: clamp(var(--text-2xl), 5vw, var(--text-3xl)); font-weight: 500; margin-top: var(--space-md); margin-bottom: var(--space-md);">
+          Todas las entradas
+        </h1>
+        <p style="font-size: var(--text-md); color: var(--color-text-muted);">
+          Comunicación, liderazgo y equipos. Lo que he visto desde dentro.
+        </p>
+      </div>
+    </section>
+
+    <!-- ===== FILTROS ======================================= -->
+    <section style="padding: var(--space-xl) 0; border-bottom: 1px solid var(--color-border);">
+      <div class="container">
+        <div class="categorias" role="group" aria-label="Filtrar por categoría">
+          <button class="categoria-tag activo" data-filter="all">Todas</button>
+          <button class="categoria-tag" data-filter="comunicacion">Comunicación</button>
+          <button class="categoria-tag" data-filter="liderazgo">Liderazgo</button>
+          <button class="categoria-tag" data-filter="equipos">Equipos</button>
+        </div>
+      </div>
+    </section>
+
+    <!-- ===== LISTADO ======================================= -->
+    <section class="seccion">
+      <div class="container">
+
+        <!-- Estado vacío: visible hasta que haya artículos -->
+        <div class="estado-vacio" id="blog-vacio">
+          <h2 class="estado-vacio__titulo">Los primeros artículos están en camino.</h2>
+          <p class="estado-vacio__texto">
+            Suscríbete a la newsletter para ser la primera en enterarte cuando lleguen.
+          </p>
+          <a href="../newsletter/index.html" class="btn btn--primario">Suscribirme</a>
+        </div>
+
+        <!-- Grid de artículos (se activa cuando haya posts) -->
+        <div class="posts-grid" id="posts-grid" style="display: none;" aria-live="polite">
+          <!-- Los artículos se añaden aquí. Ejemplo de tarjeta:
+          <article class="post-card" data-category="comunicacion">
+            <div class="post-card__img-placeholder"></div>
+            <div class="post-card__body">
+              <span class="post-card__categoria">Comunicación</span>
+              <h2 class="post-card__titulo"><a href="slug-del-articulo.html">Título del artículo</a></h2>
+              <p class="post-card__extracto">Extracto breve del artículo.</p>
+              <p class="post-card__meta">1 de enero de 2025 · 5 min de lectura</p>
+            </div>
+          </article>
+          -->
+        </div>
+
+      </div>
+    </section>
+
+  </main>
+
+  <!-- ===== FOOTER ========================================== -->
+  <footer class="footer">
+    <div class="footer__inner">
+      <div>
+        <a href="../index.html" class="footer__logo">internamente hablando</a>
+        <p class="footer__tagline">Comunicación, liderazgo y equipos.<br>Lo que pasa dentro de las organizaciones.</p>
+      </div>
+      <ul class="footer__links">
+        <li><a href="../blog/index.html">Blog</a></li>
+        <li><a href="../sobre-mi/index.html">Sobre mí</a></li>
+        <li><a href="../colaboraciones/index.html">Colaboraciones</a></li>
+        <li><a href="../newsletter/index.html">Newsletter</a></li>
+        <li><a href="../recursos/index.html">Recursos</a></li>
+      </ul>
+    </div>
+    <p class="footer__copy">© <span id="year"></span> Marilena Sánchez — internamentehablando.com</p>
+  </footer>
+
+  <script src="../js/main.js"></script>
+  <script>
+    // Filtros de categoría
+    const tags = document.querySelectorAll('.categoria-tag');
+    tags.forEach(tag => {
+      tag.addEventListener('click', () => {
+        tags.forEach(t => t.classList.remove('activo'));
+        tag.classList.add('activo');
+        const filter = tag.dataset.filter;
+        const cards = document.querySelectorAll('.post-card[data-category]');
+        cards.forEach(card => {
+          card.style.display = (filter === 'all' || card.dataset.category === filter) ? '' : 'none';
+        });
+      });
+    });
+  </script>
+</body>
+</html>

@@ -1,0 +1,87 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Recursos — Internamente Hablando</title>
+  <meta name="description" content="Recursos sobre comunicación, liderazgo y equipos. Próximamente.">
+  <meta name="author" content="Marilena Sánchez">
+
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:ital,wght@0,400;0,500;0,700;1,400;1,500&family=DM+Sans:wght@400;500&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="../css/styles.css">
+</head>
+<body>
+
+  <!-- ===== NAV =========================================== -->
+  <nav class="nav" aria-label="Navegación principal">
+    <div class="nav__inner">
+      <a href="../index.html" class="nav__logo">internamente hablando</a>
+      <button class="nav__toggle" id="navToggle" aria-expanded="false" aria-controls="navLinks" aria-label="Abrir menú">
+        <span></span><span></span><span></span>
+      </button>
+      <ul class="nav__links" id="navLinks" role="list">
+        <li><a href="../blog/index.html">Blog</a></li>
+        <li><a href="../sobre-mi/index.html">Sobre mí</a></li>
+        <li><a href="../colaboraciones/index.html">Colaboraciones</a></li>
+        <li><a href="../recursos/index.html" class="activo">Recursos</a></li>
+      </ul>
+      <a href="../newsletter/index.html" class="nav__cta">Newsletter</a>
+    </div>
+  </nav>
+
+  <main>
+
+    <section class="hero" style="padding-bottom: var(--space-2xl);">
+      <div class="hero__inner">
+        <span class="hero__etiqueta">Recursos</span>
+        <h1 style="font-size: clamp(var(--text-2xl), 5vw, var(--text-3xl)); font-weight: 500; margin-top: var(--space-md); margin-bottom: var(--space-md);">
+          Herramientas y materiales
+        </h1>
+        <p style="font-size: var(--text-md); color: var(--color-text-muted);">
+          Esta sección está en construcción. Pronto encontrarás aquí recursos prácticos
+          sobre comunicación, liderazgo y equipos.
+        </p>
+      </div>
+    </section>
+
+    <section class="seccion">
+      <div class="container">
+        <div class="estado-vacio">
+          <h2 class="estado-vacio__titulo">Próximamente</h2>
+          <p class="estado-vacio__texto">
+            Mientras tanto, no te pierdas las últimas reflexiones en el blog
+            o suscríbete a la newsletter.
+          </p>
+          <div style="display: flex; gap: var(--space-md); justify-content: center; flex-wrap: wrap;">
+            <a href="../blog/index.html" class="btn btn--secundario">Ir al blog</a>
+            <a href="../newsletter/index.html" class="btn btn--primario">Suscribirme</a>
+          </div>
+        </div>
+      </div>
+    </section>
+
+  </main>
+
+  <!-- ===== FOOTER ========================================== -->
+  <footer class="footer">
+    <div class="footer__inner">
+      <div>
+        <a href="../index.html" class="footer__logo">internamente hablando</a>
+        <p class="footer__tagline">Comunicación, liderazgo y equipos.<br>Lo que pasa dentro de las organizaciones.</p>
+      </div>
+      <ul class="footer__links">
+        <li><a href="../blog/index.html">Blog</a></li>
+        <li><a href="../sobre-mi/index.html">Sobre mí</a></li>
+        <li><a href="../colaboraciones/index.html">Colaboraciones</a></li>
+        <li><a href="../newsletter/index.html">Newsletter</a></li>
+        <li><a href="../recursos/index.html">Recursos</a></li>
+      </ul>
+    </div>
+    <p class="footer__copy">© <span id="year"></span> Marilena Sánchez — internamentehablando.com</p>
+  </footer>
+
+  <script src="../js/main.js"></script>
+</body>
+</html>
