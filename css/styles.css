@@ -933,15 +933,79 @@ blockquote {
 
 
 /* ============================================================
+   SWEEP — transición entre hero y contenido
+   ============================================================ */
+
+.sweep {
+  height: 40vh;
+  margin-top: -20vh;
+  margin-bottom: -20vh;
+  position: relative;
+  z-index: 30;
+  pointer-events: none;
+  overflow: hidden;
+  background: transparent;
+  -webkit-mask-image: linear-gradient(to bottom, transparent 0%, black 22%, black 78%, transparent 100%);
+  mask-image: linear-gradient(to bottom, transparent 0%, black 22%, black 78%, transparent 100%);
+}
+
+.sweep__band {
+  position: absolute;
+  left: -25%;
+  width: 150%;
+  will-change: transform;
+}
+
+/* Entra desde la izquierda */
+.sweep__band--a {
+  top: 0;
+  height: 40%;
+  background: var(--color-verde-dark);
+  opacity: 0.92;
+  transform: skewY(-6deg) translateX(-155%);
+  transition: transform 1.6s cubic-bezier(0.16, 1, 0.3, 1) 0s;
+}
+
+/* Entra desde la derecha */
+.sweep__band--b {
+  top: 30%;
+  height: 40%;
+  background: var(--color-mostaza);
+  opacity: 0.88;
+  transform: skewY(-6deg) translateX(155%);
+  transition: transform 1.6s cubic-bezier(0.16, 1, 0.3, 1) 0.30s;
+}
+
+/* Entra desde la izquierda */
+.sweep__band--c {
+  top: 60%;
+  height: 40%;
+  background: var(--color-rosa);
+  opacity: 0.82;
+  transform: skewY(-6deg) translateX(-155%);
+  transition: transform 1.6s cubic-bezier(0.16, 1, 0.3, 1) 0.58s;
+}
+
+.sweep.is-visible .sweep__band--a,
+.sweep.is-visible .sweep__band--b,
+.sweep.is-visible .sweep__band--c {
+  transform: skewY(-6deg) translateX(0);
+}
+
+@media (prefers-reduced-motion: reduce) {
+  .sweep { display: none; }
+}
+
+/* ============================================================
    HERO CON VÍDEO — scroll-scrubbing
    ============================================================ */
 
 /* Sección contenedora: altura extra para el scroll scrubbing.
-   100vh sticky + 50vh de recorrido = 150vh total.
+   100vh sticky + 200vh de recorrido = 300vh total.
    Al acabar el scrub el panel se despega y sube solo,
    mientras la sección siguiente entra por debajo. */
 .hero--video {
-  height: 150vh;
+  height: 300vh;
   position: relative;
   /* Sin border-bottom: la sección siguiente ya tiene su propio borde */
   border-bottom: none;

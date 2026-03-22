@@ -72,8 +72,8 @@ if (navToggle && navLinks) {
   ].filter(function (item) { return !!item.el; });
 
   // Fase de salida compartida
-  var EXIT_START = 0.75;
-  var EXIT_END   = 1.00;
+  var EXIT_START = 0.90;
+  var EXIT_END   = 1.10;
 
   // Easings
   function easeOutCubic(t) { return 1 - Math.pow(1 - t, 3); }
@@ -166,13 +166,14 @@ if (navToggle && navLinks) {
     var rect      = heroSection.getBoundingClientRect();
     var scrollable = heroSection.offsetHeight - window.innerHeight;
     var scrolled  = Math.max(0, -rect.top);
-    var progress  = clamp01(scrolled / scrollable);
+    var rawProgress = scrolled / scrollable;
+    var progress    = clamp01(rawProgress);
 
-    // Vídeo
+    // Vídeo — clamped (no puede ir más allá del final del clip)
     if (duration) video.currentTime = progress * duration;
 
-    // Textos
-    animateTexts(progress);
+    // Textos — sin clamp, puede superar 1.0 para que la salida termine
+    animateTexts(rawProgress);
   }
 
   function onScroll() {
@@ -212,4 +213,33 @@ if (navToggle && navLinks) {
   }, { threshold: 0.1, rootMargin: '0px 0px -40px 0px' });
 
   blocks.forEach(function (el) { observer.observe(el); });
+})();
+
+// ============================================================
+// SWEEP — transición entre hero y contenido
+// ============================================================
+
+(function initSweep() {
+  var sweepSection = document.getElementById('sweepSection');
+  if (!sweepSection) return;
+  if (window.matchMedia('(prefers-reduced-motion: reduce)').matches) return;
+
+  var heroSection  = document.getElementById('heroSection');
+  if (!heroSection) return;
+
+  var rafScheduled = false;
+
+  function checkTrigger() {
+    rafScheduled = false;
+    var heroBottom = heroSection.getBoundingClientRect().bottom;
+    var crossed    = heroBottom <= window.innerHeight * 0.8;
+    sweepSection.classList.toggle('is-visible', crossed);
+  }
+
+  function onScroll() {
+    if (!rafScheduled) { rafScheduled = true; requestAnimationFrame(checkTrigger); }
+  }
+
+  window.addEventListener('scroll', onScroll, { passive: true });
+  checkTrigger();
 })();
