@@ -62,28 +62,44 @@
     <section class="seccion">
       <div class="container">
 
-        <!-- Estado vacío: visible hasta que haya artículos -->
-        <div class="estado-vacio" id="blog-vacio">
-          <h2 class="estado-vacio__titulo">Los primeros artículos están en camino.</h2>
-          <p class="estado-vacio__texto">
-            Suscríbete a la newsletter para ser la primera en enterarte cuando lleguen.
-          </p>
-          <a href="../newsletter/index.html" class="btn btn--primario">Suscribirme</a>
-        </div>
+        <div class="posts-grid" id="posts-grid" aria-live="polite">
 
-        <!-- Grid de artículos (se activa cuando haya posts) -->
-        <div class="posts-grid" id="posts-grid" style="display: none;" aria-live="polite">
-          <!-- Los artículos se añaden aquí. Ejemplo de tarjeta:
-          <article class="post-card" data-category="comunicacion">
-            <div class="post-card__img-placeholder"></div>
+          <article class="post-card" data-category="equipos">
+            <div class="post-card__img-placeholder" aria-hidden="true"></div>
             <div class="post-card__body">
-              <span class="post-card__categoria">Comunicación</span>
-              <h2 class="post-card__titulo"><a href="slug-del-articulo.html">Título del artículo</a></h2>
-              <p class="post-card__extracto">Extracto breve del artículo.</p>
-              <p class="post-card__meta">1 de enero de 2025 · 5 min de lectura</p>
+              <span class="post-card__categoria">Equipos</span>
+              <h2 class="post-card__titulo">
+                <a href="la-brecha-generacional-como-comunicarnos-sin-drama.html">La brecha generacional: cómo comunicarnos sin drama</a>
+              </h2>
+              <p class="post-card__extracto">Nadie quiere molestar. Todos creen que lo están haciendo bien. Pero cada vez que se intenta coordinar algo, acaba en malentendidos y silencios incómodos.</p>
+              <p class="post-card__meta">2 de agosto de 2025 · 9 min de lectura</p>
             </div>
           </article>
-          -->
+
+          <article class="post-card" data-category="liderazgo">
+            <div class="post-card__img-placeholder" aria-hidden="true"></div>
+            <div class="post-card__body">
+              <span class="post-card__categoria">Liderazgo</span>
+              <h2 class="post-card__titulo">
+                <a href="jefes-que-se-contradicen.html">Jefes que se contradicen</a>
+              </h2>
+              <p class="post-card__extracto">Trabajar con un jefe incoherente no es solo frustrante. Es agotador. Y lo peor es esa duda que cala: ¿soy yo el que no entiende, o es que esto realmente no tiene sentido?</p>
+              <p class="post-card__meta">19 de julio de 2025 · 10 min de lectura</p>
+            </div>
+          </article>
+
+          <article class="post-card" data-category="comunicacion">
+            <div class="post-card__img-placeholder" aria-hidden="true"></div>
+            <div class="post-card__body">
+              <span class="post-card__categoria">Comunicación interna</span>
+              <h2 class="post-card__titulo">
+                <a href="me-ha-tocado-la-crisis-de-reputacion.html">Me ha tocado: la crisis de reputación</a>
+              </h2>
+              <p class="post-card__extracto">Una crisis de reputación en redes no empieza cuando algo explota. Empieza mucho antes, cuando nadie preparó lo que había que preparar.</p>
+              <p class="post-card__meta">5 de julio de 2025 · 8 min de lectura</p>
+            </div>
+          </article>
+
         </div>
 
       </div>
