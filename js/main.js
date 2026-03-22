@@ -72,8 +72,8 @@ if (navToggle && navLinks) {
   ].filter(function (item) { return !!item.el; });
 
   // Fase de salida compartida
-  var EXIT_START = 0.58;
-  var EXIT_END   = 0.90;
+  var EXIT_START = 0.75;
+  var EXIT_END   = 1.00;
 
   // Easings
   function easeOutCubic(t) { return 1 - Math.pow(1 - t, 3); }
