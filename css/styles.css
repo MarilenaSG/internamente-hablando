@@ -109,6 +109,7 @@ html {
   font-size: 16px;
   scroll-behavior: smooth;
   -webkit-text-size-adjust: 100%;
+  overflow-x: hidden;
 }
 
 body {
@@ -1169,7 +1170,8 @@ blockquote {
 
 /* ── Hero con imagen de fondo — home ── */
 .hero--img {
-  width: 100%;
+  width: 100vw;
+  margin-left: calc(50% - 50vw);
   min-height: 100vh;
   background-image: url('../assets/img/hero.png');
   background-size: cover;
