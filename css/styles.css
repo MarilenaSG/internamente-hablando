@@ -1170,12 +1170,11 @@ blockquote {
 
 /* ── Hero con imagen de fondo — home ── */
 .hero--img {
-  width: 100vw;
-  margin-left: calc(50% - 50vw);
+  width: 100%;
   min-height: 100vh;
   background-image: url('../assets/img/hero.png');
   background-size: cover;
-  background-position: right center;
+  background-position: center right;
   background-repeat: no-repeat;
   display: flex;
   align-items: center;
@@ -1197,7 +1196,7 @@ blockquote {
 .hero--img .hero__inner {
   max-width: 1200px;
   margin: 0 auto;
-  padding: 8rem 5vw 6rem;
+  padding: 8rem 4rem 6rem;
   position: relative;
   z-index: 1;
 }
