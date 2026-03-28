@@ -296,6 +296,50 @@ blockquote {
   background-color: var(--color-surface);
 }
 
+.hero--img {
+  width: 100%;
+  min-height: 100vh;
+  padding: 0;
+  background-image: url('../assets/img/hero.png');
+  background-size: cover;
+  background-position: right center;
+  background-repeat: no-repeat;
+  display: flex;
+  align-items: center;
+  position: relative;
+}
+
+.hero--img::before {
+  content: '';
+  position: absolute;
+  inset: 0;
+  background: linear-gradient(
+    to right,
+    rgba(27, 74, 66, 0.82) 0%,
+    rgba(27, 74, 66, 0.60) 45%,
+    rgba(27, 74, 66, 0.15) 70%,
+    transparent 85%
+  );
+  z-index: 0;
+}
+
+.hero--img .hero__inner {
+  max-width: var(--max-width);
+  padding: 8rem var(--space-xl) 6rem;
+  position: relative;
+  z-index: 1;
+}
+
+.hero--img .hero__headline,
+.hero--img .btn-arrow {
+  color: var(--color-on-primary);
+}
+
+.hero--img .tag {
+  border-color: rgba(250, 249, 246, 0.4);
+  color: var(--color-on-primary);
+}
+
 .hero__inner {
   max-width: var(--max-width-texto);
   margin: 0 auto;
@@ -1169,51 +1213,6 @@ blockquote {
 }
 
 /* ── Hero con imagen de fondo — home ── */
-.hero--img {
-  width: 100%;
-  min-height: 100vh;
-  background-image: url('../assets/img/hero.png');
-  background-size: cover;
-  background-position: center right;
-  background-repeat: no-repeat;
-  display: flex;
-  align-items: center;
-  position: relative;
-  padding: 0;
-}
-.hero--img::before {
-  content: '';
-  position: absolute;
-  inset: 0;
-  background: linear-gradient(
-    to right,
-    rgba(27, 74, 66, 0.80) 0%,
-    rgba(27, 74, 66, 0.60) 40%,
-    rgba(27, 74, 66, 0.10) 70%,
-    transparent 85%
-  );
-}
-.hero--img .hero__inner {
-  max-width: 1200px;
-  margin: 0 auto;
-  padding: 8rem 4rem 6rem;
-  position: relative;
-  z-index: 1;
-}
-.hero--img .hero__headline {
-  color: #FAF9F6;
-}
-.hero--img .hero__headline em {
-  color: var(--color-accent);
-}
-.hero--img .tag {
-  color: rgba(250, 249, 246, 0.85);
-  border-color: rgba(250, 249, 246, 0.30);
-}
-.hero--img .btn-arrow {
-  color: #FAF9F6;
-}
-
 /* ── Hero dark — páginas interiores ── */
 .hero--dark {
   background: var(--gradient-signature);
