@@ -6,6 +6,15 @@
 const yearEl = document.getElementById('year');
 if (yearEl) yearEl.textContent = new Date().getFullYear();
 
+// Nav glassmorphism — clase .scrolled al hacer scroll
+(function initNavScroll() {
+  var nav = document.querySelector('.nav');
+  if (!nav) return;
+  function update() { nav.classList.toggle('scrolled', window.scrollY > 40); }
+  window.addEventListener('scroll', update, { passive: true });
+  update();
+})();
+
 // Menú móvil
 const navToggle = document.getElementById('navToggle');
 const navLinks  = document.getElementById('navLinks');
