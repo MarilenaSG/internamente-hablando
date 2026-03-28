@@ -1050,10 +1050,20 @@ blockquote {
 
 /* ── Highlight — marca de texto con acento cyan ── */
 .highlight {
-  background: var(--color-accent);
+  background: #00e8c4;
   color: #0a0a0a;
-  padding: 0 0.15em;
+  padding: 0 0.12em;
   display: inline;
+  line-height: inherit;
+}
+
+/* ── Highlight magenta — tensión, conflicto, problema ── */
+.highlight--magenta {
+  background: #c43b73;
+  color: #FAF9F6;
+  padding: 0 0.12em;
+  display: inline;
+  line-height: inherit;
 }
 
 .highlight-sm {
