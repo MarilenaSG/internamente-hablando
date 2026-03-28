@@ -1180,7 +1180,6 @@ blockquote {
   height: 100%;
   object-fit: cover;
   object-position: center top;
-  mix-blend-mode: multiply;
   z-index: 0;
 }
 .hero--img .hero__inner {
