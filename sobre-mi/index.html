@@ -17,15 +17,14 @@
   <!-- ===== NAV =========================================== -->
   <nav class="nav" aria-label="Navegación principal">
     <div class="nav__inner">
-      <a href="../index.html" class="nav__logo">internamente hablando</a>
+      <a href="../index.html" class="nav__logo"><em>Internamente Hablando</em></a>
       <button class="nav__toggle" id="navToggle" aria-expanded="false" aria-controls="navLinks" aria-label="Abrir menú">
         <span></span><span></span><span></span>
       </button>
       <ul class="nav__links" id="navLinks" role="list">
-        <li><a href="../blog/index.html">Blog</a></li>
-        <li><a href="../sobre-mi/index.html" class="activo">Sobre mí</a></li>
-        <li><a href="../colaboraciones/index.html">Colaboraciones</a></li>
-        <li><a href="../recursos/index.html">Recursos</a></li>
+        <li><a href="../blog/index.html">Artículos</a></li>
+        <li><a href="../recursos/index.html">Temas</a></li>
+        <li><a href="../sobre-mi/index.html">Acerca de</a></li>
       </ul>
       <a href="../newsletter/index.html" class="nav__cta">Newsletter</a>
     </div>
@@ -197,19 +196,25 @@
   <!-- ===== FOOTER ========================================== -->
   <footer class="footer">
     <div class="footer__inner">
-      <div>
-        <a href="../index.html" class="footer__logo">internamente hablando</a>
-        <p class="footer__tagline">Comunicación, liderazgo y equipos.<br>Lo que pasa dentro de las organizaciones.</p>
+      <div class="footer__marca">
+        <a href="../index.html" class="footer__logo"><em>Internamente<br>Hablando</em></a>
+        <p>The Intellectual Curator. Conecta conversaciones internas y realidades organizacionales.</p>
       </div>
-      <ul class="footer__links">
-        <li><a href="../blog/index.html">Blog</a></li>
-        <li><a href="../sobre-mi/index.html">Sobre mí</a></li>
-        <li><a href="../colaboraciones/index.html">Colaboraciones</a></li>
-        <li><a href="../newsletter/index.html">Newsletter</a></li>
-        <li><a href="../recursos/index.html">Recursos</a></li>
-      </ul>
+      <nav class="footer__nav" aria-label="Explorar">
+        <strong>EXPLORAR</strong>
+        <a href="../blog/index.html">Artículos</a>
+        <a href="../recursos/index.html">Temas</a>
+        <a href="../sobre-mi/index.html">Acerca de</a>
+      </nav>
+      <nav class="footer__nav" aria-label="Conectar">
+        <strong>CONECTAR</strong>
+        <a href="../newsletter/index.html">Newsletter</a>
+        <a href="../colaboraciones/index.html">Colaboraciones</a>
+      </nav>
     </div>
-    <p class="footer__copy">© <span id="year"></span> Marilena Sánchez — internamentehablando.com</p>
+    <div class="footer__bottom">
+      <p>© <span id="year"></span> · INTERNAMENTE HABLANDO · Marilena Sánchez</p>
+    </div>
   </footer>
 
   <script src="../js/main.js"></script>

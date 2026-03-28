@@ -24,15 +24,14 @@
   <!-- ===== NAV =========================================== -->
   <nav class="nav" aria-label="Navegación principal">
     <div class="nav__inner">
-      <a href="../index.html" class="nav__logo">internamente hablando</a>
+      <a href="../index.html" class="nav__logo"><em>Internamente Hablando</em></a>
       <button class="nav__toggle" id="navToggle" aria-expanded="false" aria-controls="navLinks" aria-label="Abrir menú">
         <span></span><span></span><span></span>
       </button>
       <ul class="nav__links" id="navLinks" role="list">
-        <li><a href="../blog/index.html" class="activo">Blog</a></li>
-        <li><a href="../sobre-mi/index.html">Sobre mí</a></li>
-        <li><a href="../colaboraciones/index.html">Colaboraciones</a></li>
-        <li><a href="../recursos/index.html">Recursos</a></li>
+        <li><a href="../blog/index.html">Artículos</a></li>
+        <li><a href="../recursos/index.html">Temas</a></li>
+        <li><a href="../sobre-mi/index.html">Acerca de</a></li>
       </ul>
       <a href="../newsletter/index.html" class="nav__cta">Newsletter</a>
     </div>
@@ -188,40 +187,44 @@
 
       </div>
 
-      <!-- ===== CTA FINAL ================================= -->
-      <div class="container--texto" style="margin-top: var(--space-3xl); padding-top: var(--space-2xl); border-top: 1px solid var(--color-border);">
-        <p style="font-size: var(--text-sm); color: var(--color-text-muted); margin-bottom: var(--space-lg);">
-          Si esto te ha resonado, cada dos semanas mando una reflexión así — con más profundidad y sin el algoritmo de por medio.
-        </p>
-        <a href="../newsletter/index.html" class="btn btn--primario">Suscribirme a la newsletter</a>
-      </div>
-
+      <!-- ===== NEWSLETTER CTA ============================= -->
+      <section class="newsletter" style="margin-top: var(--space-4xl);">
+        <div class="newsletter__inner">
+          <div class="newsletter__copy">
+            <h2>Una reflexión así,<br><span class="highlight">cada martes.</span></h2>
+            <p>Sin algoritmo. Sin ruido. Solo lo que vale la pena pensar esta semana.</p>
+          </div>
+          <form class="newsletter__form" action="https://marysanchez.substack.com/api/v1/free" method="post">
+            <label for="email-art" class="sr-only">Tu dirección de correo electrónico</label>
+            <input type="email" id="email-art" name="email" placeholder="Tu correo" autocomplete="email" required>
+            <button type="submit">UNIRME A LA NEWSLETTER →</button>
+          </form>
+        </div>
+      </section>
       <!-- ===== ARTÍCULOS RELACIONADOS =================== -->
-      <div class="seccion seccion--alt" style="margin-top: var(--space-3xl);">
-        <div class="container">
-          <h2 class="seccion__titulo" style="font-size: var(--text-xl); margin-bottom: var(--space-xl);">Más artículos</h2>
-          <div class="posts-grid">
-            <article class="post-card">
-              <div class="post-card__body">
-                <span class="post-card__categoria">Comunicación interna</span>
-                <h3 class="post-card__titulo">
-                  <a href="me-ha-tocado-la-crisis-de-reputacion.html">Me ha tocado: la crisis de reputación</a>
-                </h3>
-                <p class="post-card__extracto">Una crisis de reputación en redes no empieza cuando algo explota. Empieza mucho antes, cuando nadie preparó lo que había que preparar.</p>
+      <section class="relacionados">
+        <div class="container--texto">
+          <p class="relacionados__label">Más artículos</p>
+          <div class="relacionados__lista">
+            <a class="rel-card" href="me-ha-tocado-la-crisis-de-reputacion.html">
+              <div class="rel-card__img-placeholder" aria-hidden="true"></div>
+              <div class="rel-card__body">
+                <span class="tag tag--accent">Comunicación interna</span>
+                <p class="rel-card__titulo">Me ha tocado: la crisis de reputación</p>
+                <p class="rel-card__extracto">Una crisis de reputación en redes no empieza cuando algo explota. Empieza mucho antes, cuando nadie preparó lo que había que preparar.</p>
               </div>
-            </article>
-            <article class="post-card">
-              <div class="post-card__body">
-                <span class="post-card__categoria">Equipos</span>
-                <h3 class="post-card__titulo">
-                  <a href="la-brecha-generacional-como-comunicarnos-sin-drama.html">La brecha generacional: cómo comunicarnos sin drama</a>
-                </h3>
-                <p class="post-card__extracto">Trabajar en una empresa con varias generaciones conviviendo es como pasar el verano en casa del pueblo con toda la familia.</p>
+            </a>
+            <a class="rel-card" href="la-brecha-generacional-como-comunicarnos-sin-drama.html">
+              <div class="rel-card__img-placeholder" aria-hidden="true"></div>
+              <div class="rel-card__body">
+                <span class="tag tag--accent">Equipos</span>
+                <p class="rel-card__titulo">La brecha generacional: cómo comunicarnos sin drama</p>
+                <p class="rel-card__extracto">Trabajar en una empresa con varias generaciones conviviendo es como pasar el verano en casa del pueblo con toda la familia.</p>
               </div>
-            </article>
+            </a>
           </div>
         </div>
-      </div>
+      </section>
 
     </article>
   </main>
@@ -229,22 +232,25 @@
   <!-- ===== FOOTER ========================================= -->
   <footer class="footer">
     <div class="footer__inner">
-      <div>
-        <a href="../index.html" class="footer__logo">internamente hablando</a>
-        <p class="footer__tagline">
-          Comunicación, liderazgo y equipos.<br>
-          Lo que pasa dentro de las organizaciones.
-        </p>
+      <div class="footer__marca">
+        <a href="../index.html" class="footer__logo"><em>Internamente<br>Hablando</em></a>
+        <p>The Intellectual Curator. Conecta conversaciones internas y realidades organizacionales.</p>
       </div>
-      <ul class="footer__links">
-        <li><a href="../blog/index.html">Blog</a></li>
-        <li><a href="../sobre-mi/index.html">Sobre mí</a></li>
-        <li><a href="../colaboraciones/index.html">Colaboraciones</a></li>
-        <li><a href="../newsletter/index.html">Newsletter</a></li>
-        <li><a href="../recursos/index.html">Recursos</a></li>
-      </ul>
+      <nav class="footer__nav" aria-label="Explorar">
+        <strong>EXPLORAR</strong>
+        <a href="../blog/index.html">Artículos</a>
+        <a href="../recursos/index.html">Temas</a>
+        <a href="../sobre-mi/index.html">Acerca de</a>
+      </nav>
+      <nav class="footer__nav" aria-label="Conectar">
+        <strong>CONECTAR</strong>
+        <a href="../newsletter/index.html">Newsletter</a>
+        <a href="../colaboraciones/index.html">Colaboraciones</a>
+      </nav>
     </div>
-    <p class="footer__copy">© <span id="year"></span> Marilena Sánchez — internamentehablando.com</p>
+    <div class="footer__bottom">
+      <p>© <span id="year"></span> · INTERNAMENTE HABLANDO · Marilena Sánchez</p>
+    </div>
   </footer>
 
   <script src="../js/main.js"></script>

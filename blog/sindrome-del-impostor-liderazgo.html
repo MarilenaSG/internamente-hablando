@@ -13,15 +13,21 @@
   <link rel="stylesheet" href="../css/styles.css">
 </head>
 <body>
-  <nav class="nav"><div class="nav__inner">
-    <a href="../index.html" class="nav__logo">internamente hablando</a>
-    <button class="nav__toggle" id="navToggle" aria-expanded="false" aria-controls="navLinks" aria-label="Abrir menú"><span></span><span></span><span></span></button>
-    <ul class="nav__links" id="navLinks" role="list">
-      <li><a href="../blog/index.html" class="activo">Blog</a></li><li><a href="../sobre-mi/index.html">Sobre mí</a></li>
-      <li><a href="../colaboraciones/index.html">Colaboraciones</a></li><li><a href="../recursos/index.html">Recursos</a></li>
-    </ul>
-    <a href="../newsletter/index.html" class="nav__cta">Newsletter</a>
-  </div></nav>
+  <!-- ===== NAV =========================================== -->
+  <nav class="nav" aria-label="Navegación principal">
+    <div class="nav__inner">
+      <a href="../index.html" class="nav__logo"><em>Internamente Hablando</em></a>
+      <button class="nav__toggle" id="navToggle" aria-expanded="false" aria-controls="navLinks" aria-label="Abrir menú">
+        <span></span><span></span><span></span>
+      </button>
+      <ul class="nav__links" id="navLinks" role="list">
+        <li><a href="../blog/index.html">Artículos</a></li>
+        <li><a href="../recursos/index.html">Temas</a></li>
+        <li><a href="../sobre-mi/index.html">Acerca de</a></li>
+      </ul>
+      <a href="../newsletter/index.html" class="nav__cta">Newsletter</a>
+    </div>
+  </nav>
   <main><article class="articulo">
     <header class="articulo__header">
       <span class="post-card__categoria">Carrera y crecimiento</span>
@@ -69,14 +75,47 @@
       <p>Porque los que no reflexionan sobre si están a la altura nunca se hacen esa pregunta.</p>
 
     </div>
-    <div class="container--texto" style="margin-top: var(--space-3xl); padding-top: var(--space-2xl); border-top: 1px solid var(--color-border);">
-      <p style="font-size: var(--text-sm); color: var(--color-text-muted); margin-bottom: var(--space-lg);">Si esto te ha resonado, cada dos semanas mando una reflexión así — sin el algoritmo de por medio.</p>
-      <a href="../newsletter/index.html" class="btn btn--primario">Suscribirme a la newsletter</a>
-    </div>
+
+
+      <!-- ===== NEWSLETTER CTA ============================= -->
+      <section class="newsletter" style="margin-top: var(--space-4xl);">
+        <div class="newsletter__inner">
+          <div class="newsletter__copy">
+            <h2>Una reflexión así,<br><span class="highlight">cada martes.</span></h2>
+            <p>Sin algoritmo. Sin ruido. Solo lo que vale la pena pensar esta semana.</p>
+          </div>
+          <form class="newsletter__form" action="https://marysanchez.substack.com/api/v1/free" method="post">
+            <label for="email-art" class="sr-only">Tu dirección de correo electrónico</label>
+            <input type="email" id="email-art" name="email" placeholder="Tu correo" autocomplete="email" required>
+            <button type="submit">UNIRME A LA NEWSLETTER →</button>
+          </form>
+        </div>
+      </section>
+
   </article></main>
-  <footer class="footer"><div class="footer__inner">
-    <div><a href="../index.html" class="footer__logo">internamente hablando</a><p class="footer__tagline">Comunicación, liderazgo y equipos.<br>Lo que pasa dentro de las organizaciones.</p></div>
-    <ul class="footer__links"><li><a href="../blog/index.html">Blog</a></li><li><a href="../sobre-mi/index.html">Sobre mí</a></li><li><a href="../colaboraciones/index.html">Colaboraciones</a></li><li><a href="../newsletter/index.html">Newsletter</a></li><li><a href="../recursos/index.html">Recursos</a></li></ul>
-  </div><p class="footer__copy">© <span id="year"></span> Marilena Sánchez — internamentehablando.com</p></footer>
+
+  <!-- ===== FOOTER ========================================= -->
+<footer class="footer">
+  <div class="footer__inner">
+    <div class="footer__marca">
+      <a href="../index.html" class="footer__logo"><em>Internamente<br>Hablando</em></a>
+      <p>The Intellectual Curator. Conecta conversaciones internas y realidades organizacionales.</p>
+    </div>
+    <nav class="footer__nav" aria-label="Explorar">
+      <strong>EXPLORAR</strong>
+      <a href="../blog/index.html">Artículos</a>
+      <a href="../recursos/index.html">Temas</a>
+      <a href="../sobre-mi/index.html">Acerca de</a>
+    </nav>
+    <nav class="footer__nav" aria-label="Conectar">
+      <strong>CONECTAR</strong>
+      <a href="../newsletter/index.html">Newsletter</a>
+      <a href="../colaboraciones/index.html">Colaboraciones</a>
+    </nav>
+  </div>
+  <div class="footer__bottom">
+    <p>© <span id="year"></span> · INTERNAMENTE HABLANDO · Marilena Sánchez</p>
+  </div>
+</footer>
   <script src="../js/main.js"></script>
 </body></html>

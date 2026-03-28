@@ -176,9 +176,10 @@ blockquote {
   font-size: clamp(var(--text-lg), 2vw, var(--text-xl));
   line-height: 1.55;
   color: var(--color-on-surface);
-  border-left: 2px solid var(--color-secondary);
-  padding: var(--space-sm) 0 var(--space-sm) var(--space-xl);
-  margin: var(--space-3xl) 0 var(--space-3xl) -1.5rem;
+  border-left: 4px solid var(--color-secondary);
+  background: linear-gradient(135deg, rgba(27, 74, 66, 0.05), rgba(27, 43, 75, 0.05));
+  padding: var(--space-xl) var(--space-2xl);
+  margin: var(--space-3xl) -2rem;
 }
 
 /* ── Layout ── */
@@ -573,6 +574,7 @@ blockquote {
   font-family: var(--font-sans);
   font-size: var(--text-md);
   line-height: 1.8;
+  counter-reset: seccion;
 }
 
 .articulo__cuerpo p {
@@ -587,6 +589,19 @@ blockquote {
   font-weight: 400;
   letter-spacing: -0.02em;
   margin: var(--space-3xl) 0 var(--space-lg);
+  counter-increment: seccion;
+}
+
+.articulo__cuerpo h2::before {
+  content: counter(seccion, decimal-leading-zero);
+  display: block;
+  font-family: var(--font-sans);
+  font-size: 0.65rem;
+  font-weight: 600;
+  letter-spacing: 0.12em;
+  text-transform: uppercase;
+  color: var(--color-secondary);
+  margin-bottom: var(--space-xs);
 }
 
 .articulo__cuerpo h3 {
@@ -595,6 +610,25 @@ blockquote {
   font-weight: 400;
   letter-spacing: -0.01em;
   margin: var(--space-2xl) 0 var(--space-sm);
+}
+
+/* ── Bloque acento — punto de énfasis con borde magenta ── */
+.bloque-acento {
+  border-left: 3px solid var(--color-secondary);
+  background: rgba(196, 59, 115, 0.05);
+  padding: var(--space-lg) var(--space-xl);
+  margin: var(--space-xl) 0;
+}
+
+.bloque-acento strong {
+  display: block;
+  font-family: var(--font-sans);
+  font-size: 0.7rem;
+  font-weight: 700;
+  letter-spacing: 0.12em;
+  text-transform: uppercase;
+  color: var(--color-secondary);
+  margin-bottom: var(--space-xs);
 }
 
 /* ── Newsletter CTA ── */
@@ -1005,7 +1039,8 @@ blockquote {
 
   blockquote {
     margin-left: 0;
-    padding-left: var(--space-lg);
+    margin-right: 0;
+    padding: var(--space-lg);
   }
 }
 
