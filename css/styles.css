@@ -296,50 +296,6 @@ blockquote {
   background-color: var(--color-surface);
 }
 
-.hero--img {
-  width: 100%;
-  min-height: 100vh;
-  padding: 0;
-  background-image: url('../assets/img/hero.png');
-  background-size: cover;
-  background-position: right center;
-  background-repeat: no-repeat;
-  display: flex;
-  align-items: center;
-  position: relative;
-}
-
-.hero--img::before {
-  content: '';
-  position: absolute;
-  inset: 0;
-  background: linear-gradient(
-    to right,
-    rgba(27, 74, 66, 0.82) 0%,
-    rgba(27, 74, 66, 0.60) 45%,
-    rgba(27, 74, 66, 0.15) 70%,
-    transparent 85%
-  );
-  z-index: 0;
-}
-
-.hero--img .hero__inner {
-  max-width: var(--max-width);
-  padding: 8rem var(--space-xl) 6rem;
-  position: relative;
-  z-index: 1;
-}
-
-.hero--img .hero__headline,
-.hero--img .btn-arrow {
-  color: var(--color-on-primary);
-}
-
-.hero--img .tag {
-  border-color: rgba(250, 249, 246, 0.4);
-  color: var(--color-on-primary);
-}
-
 .hero__inner {
   max-width: var(--max-width-texto);
   margin: 0 auto;
@@ -1180,6 +1136,51 @@ blockquote {
 .hero {
   padding: clamp(5rem, 12vh, 9rem) 0 clamp(4rem, 8vh, 7rem);
   background: var(--color-surface);
+}
+
+/* ── Hero home — background-image, gana cascada sobre .hero ── */
+.hero--img {
+  width: 100%;
+  min-height: 100vh;
+  padding: 0;
+  background-image: url('../assets/img/hero.png');
+  background-size: cover;
+  background-position: right center;
+  background-repeat: no-repeat;
+  display: flex;
+  align-items: center;
+  position: relative;
+}
+
+.hero--img::before {
+  content: '';
+  position: absolute;
+  inset: 0;
+  background: linear-gradient(
+    to right,
+    rgba(27, 74, 66, 0.82) 0%,
+    rgba(27, 74, 66, 0.60) 45%,
+    rgba(27, 74, 66, 0.15) 70%,
+    transparent 85%
+  );
+  z-index: 0;
+}
+
+.hero--img .hero__inner {
+  max-width: var(--max-width);
+  padding: 8rem var(--space-xl) 6rem;
+  position: relative;
+  z-index: 1;
+}
+
+.hero--img .hero__headline,
+.hero--img .btn-arrow {
+  color: var(--color-on-primary);
+}
+
+.hero--img .tag {
+  border-color: rgba(250, 249, 246, 0.4);
+  color: var(--color-on-primary);
 }
 
 .hero__inner {
