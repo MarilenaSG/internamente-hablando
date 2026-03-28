@@ -10,7 +10,7 @@ if (yearEl) yearEl.textContent = new Date().getFullYear();
 (function initNavScroll() {
   var nav = document.querySelector('.nav');
   if (!nav) return;
-  function update() { nav.classList.toggle('scrolled', window.scrollY > 40); }
+  function update() { nav.classList.toggle('scrolled', window.scrollY > 50); }
   window.addEventListener('scroll', update, { passive: true });
   update();
 })();
