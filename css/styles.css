@@ -1170,6 +1170,8 @@ blockquote {
 /* ── Hero con imagen de fondo — home ── */
 .hero--img {
   position: relative;
+  padding: 0;             /* cancela el padding vertical de .hero */
+  overflow: hidden;
   background: var(--gradient-signature);
 }
 .hero__bg-img {
@@ -1182,7 +1184,7 @@ blockquote {
   inset: 0;
   max-width: none;
   margin: 0;
-  padding: clamp(4rem, 8vh, 7rem)
+  padding: clamp(5rem, 10vh, 8rem)
            max(var(--space-xl), calc((100% - var(--max-width)) / 2 + var(--space-xl)));
   display: flex;
   flex-direction: column;
