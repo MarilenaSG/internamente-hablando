@@ -1167,6 +1167,25 @@ blockquote {
   flex-wrap: wrap;
 }
 
+/* ── Hero dark — páginas interiores ── */
+.hero--dark {
+  background: var(--gradient-signature);
+}
+.hero--dark .hero__etiqueta {
+  color: var(--color-accent);
+  background-color: rgba(0, 232, 196, 0.12);
+}
+.hero--dark .hero__titulo,
+.hero--dark h1 {
+  color: #FAF9F6;
+}
+.hero--dark .hero__titulo em {
+  color: var(--color-accent);
+}
+.hero--dark .hero__subtitulo {
+  color: rgba(250, 249, 246, 0.72);
+}
+
 /* ── FEATURED — artículo destacado horizontal ── */
 .featured {
   background: var(--color-surface-low);
