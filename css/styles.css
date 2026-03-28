@@ -1170,14 +1170,18 @@ blockquote {
 /* ── Hero con imagen de fondo — home ── */
 .hero--img {
   position: relative;
-  padding: 0;             /* cancela el padding vertical de .hero */
+  padding: 0;
   overflow: hidden;
   background: var(--gradient-signature);
+  min-height: clamp(22rem, 62vh, 46rem);
 }
 .hero__bg-img {
-  display: block;
+  position: absolute;
+  inset: 0;
   width: 100%;
-  height: auto;
+  height: 100%;
+  object-fit: cover;
+  object-position: center center;
 }
 .hero--img .hero__inner {
   position: absolute;
