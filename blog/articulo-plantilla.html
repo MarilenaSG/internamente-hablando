@@ -2,159 +2,229 @@
 <!--
   PLANTILLA DE ARTÍCULO — internamentehablando.com
   ─────────────────────────────────────────────────
-  Cómo crear un nuevo artículo:
-  1. Duplicar este archivo con el slug, p.ej. "los-silencios-que-destruyen-equipos.html"
-  2. Sustituir todos los [PLACEHOLDER] con el contenido real
-  3. Actualizar <title>, <meta description> y las etiquetas og:*
-  4. Añadir un enlace a la nueva entrada en blog/index.html
+  CÓMO PUBLICAR UN ARTÍCULO NUEVO:
+
+  1. Duplicar este archivo con el slug del artículo.
+     Ejemplo: "las-reuniones-que-destruyen-equipos.html"
+
+  2. Sustituir todos los [PLACEHOLDER] con el contenido real.
+
+  3. Copiar la imagen a:
+     assets/img/blog/articles/[slug].jpg
+     (misma carpeta, mismo nombre que el HTML sin extensión)
+
+  4. En blog/index.html → añadir card al PRINCIPIO del #posts-grid.
+
+  5. En index.html (home) → en el bloque .grid-recientes, poner
+     el nuevo artículo como primera tarjeta y eliminar la tercera.
+
+  Hecho. El JS se encarga de cargar todas las imágenes automáticamente.
 -->
 <html lang="es">
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <title>[TÍTULO DEL ARTÍCULO] — Internamente Hablando</title>
-  <meta name="description" content="[Descripción del artículo, 150-160 caracteres.]">
+  <meta name="description" content="[Extracto del artículo. Máximo 160 caracteres. Debe enganchar.]">
   <meta name="author" content="Marilena Sánchez">
-
-  <meta property="og:title" content="[TÍTULO DEL ARTÍCULO] — Internamente Hablando">
-  <meta property="og:description" content="[Descripción para redes sociales.]">
+  <meta property="og:title" content="[TÍTULO DEL ARTÍCULO]">
+  <meta property="og:description" content="[Extracto para redes sociales.]">
   <meta property="og:type" content="article">
   <meta property="og:url" content="https://internamentehablando.com/blog/[slug].html">
   <meta property="article:published_time" content="[YYYY-MM-DD]">
   <meta property="article:author" content="Marilena Sánchez">
-  <meta property="article:section" content="[Comunicación / Liderazgo / Equipos]">
+  <meta property="article:tag" content="[Comunicación interna / Liderazgo / Equipos / Carrera]">
 
   <link rel="preconnect" href="https://fonts.googleapis.com">
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
   <link href="https://fonts.googleapis.com/css2?family=Newsreader:ital,opsz,wght@0,6..72,300;0,6..72,400;0,6..72,500;0,6..72,700;1,6..72,300;1,6..72,400;1,6..72,500&family=Inter:wght@400;500;600&display=swap" rel="stylesheet">
   <link rel="stylesheet" href="../css/styles.css">
+  <link rel="icon" type="image/svg+xml" href="../assets/logos/favicon.svg">
 </head>
 <body>
 
   <!-- ===== NAV =========================================== -->
   <nav class="nav" aria-label="Navegación principal">
     <div class="nav__inner">
-      <a href="../index.html" class="nav__logo">internamente hablando</a>
+      <a href="../index.html" class="nav__logo" aria-label="Internamente Hablando — Inicio">
+        <img src="../assets/logos/logo_completo.svg" alt="Internamente Hablando" height="32" loading="eager">
+      </a>
       <button class="nav__toggle" id="navToggle" aria-expanded="false" aria-controls="navLinks" aria-label="Abrir menú">
         <span></span><span></span><span></span>
       </button>
       <ul class="nav__links" id="navLinks" role="list">
         <li><a href="../blog/index.html" class="activo">Blog</a></li>
-        <li><a href="../sobre-mi/index.html">Sobre mí</a></li>
-        <li><a href="../colaboraciones/index.html">Colaboraciones</a></li>
-        <li><a href="../recursos/index.html">Recursos</a></li>
+        <li class="nav__item--dropdown">
+          <button class="nav__dropdown-trigger" aria-expanded="false" aria-haspopup="true">Acerca de <svg class="nav__chevron" xmlns="http://www.w3.org/2000/svg" width="12" height="12" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><polyline points="6 9 12 15 18 9"/></svg></button>
+          <ul class="nav__dropdown" role="list">
+            <li><a href="../sobre-mi/index.html">Acerca de IH</a></li>
+            <li><a href="../colaboraciones/index.html">Colaboraciones</a></li>
+            <li><a href="../herramientas/index.html">Herramientas</a></li>
+          </ul>
+        </li>
       </ul>
       <a href="../newsletter/index.html" class="nav__cta">Newsletter</a>
     </div>
   </nav>
 
   <main>
-
-    <!-- ===== CABECERA DEL ARTÍCULO ======================== -->
     <article class="articulo">
+
+      <!-- ===== CABECERA DEL ARTÍCULO ======================== -->
       <header class="articulo__header">
-        <div class="articulo__meta">
-          <a href="../blog/index.html" style="color: var(--color-text-light); transition: color var(--transition);">← Blog</a>
-          <span>·</span>
-          <!-- Categoría: Comunicación / Liderazgo / Equipos -->
-          <span class="hero__etiqueta" style="margin-bottom: 0;">[CATEGORÍA]</span>
-          <span>·</span>
-          <time datetime="[YYYY-MM-DD]">[DD de mes de YYYY]</time>
-          <span>·</span>
-          <span>[X] min de lectura</span>
+        <div class="articulo__header-inner">
+          <div class="articulo__meta-top">
+            <!-- Categoría: Comunicación interna / Liderazgo / Equipos / Carrera y crecimiento -->
+            <span class="tag tag--categoria">[CATEGORÍA]</span>
+            <span class="articulo__tiempo">[X] min de lectura</span>
+          </div>
+          <h1 class="articulo__titulo">
+            [Título con <span class="highlight">palabra clave</span> destacada]
+          </h1>
+          <div class="articulo__meta-bottom">
+            <span class="articulo__autor">Marilena Sánchez</span>
+            <span class="articulo__separador">·</span>
+            <time class="articulo__fecha" datetime="[YYYY-MM-DD]">[DD de mes de YYYY]</time>
+          </div>
         </div>
-
-        <h1 class="articulo__titulo">
-          [TÍTULO DEL ARTÍCULO]
-        </h1>
-
-        <p style="font-size: var(--text-md); color: var(--color-text-muted); line-height: 1.7; max-width: 58ch;">
-          [Entradilla: 1-2 frases que amplíen el título y enganchen al lector.]
-        </p>
       </header>
 
-      <!-- ===== CUERPO ====================================== -->
+      <!-- ===== IMAGEN DEL ARTÍCULO ========================= -->
+      <!-- Ruta: ../assets/img/blog/articles/[slug].jpg       -->
+      <!-- Misma imagen que para las cards — el JS la reutiliza -->
+      <figure class="articulo__imagen">
+        <img src="../assets/img/blog/articles/[slug].jpg"
+             alt="[Descripción de la imagen]"
+             loading="eager">
+      </figure>
+
+      <!-- ===== CUERPO DEL ARTÍCULO ========================= -->
       <div class="articulo__cuerpo">
 
-        <p>
-          [Párrafo de apertura. La primera frase es la más importante: tiene que enganchar
-          sin que el lector necesite contexto previo.]
-        </p>
+        <p>[Párrafo de apertura. La primera frase engancha sin contexto previo.
+        Una anécdota, una imagen concreta o una paradoja que ponga en marcha al lector.]</p>
 
-        <p>[Desarrollo del primer bloque temático.]</p>
+        <p>[Segundo párrafo corto. El giro hacia el problema real. Va solo.]</p>
 
+        <!-- BLOCKQUOTE: frase autosuficiente, máximo 3 líneas, sin referencias al texto anterior -->
         <blockquote>
-          [Cita destacada, reflexión clave o frase que merezca resaltarse.]
+          <p>[Primera frase potente. La paradoja o declaración central del artículo.
+          Funciona leída sola, fuera de contexto.]</p>
         </blockquote>
 
-        <h2>[Subtítulo de sección]</h2>
+        <!-- H2: highlight en la palabra con mayor carga conceptual (tensión → magenta) -->
+        <h2>[Primer titular de sección con <span class="highlight--magenta">concepto clave</span>]</h2>
 
-        <p>[Desarrollo de la sección.]</p>
+        <p>[Desarrollo de la sección. Una idea por párrafo.]</p>
 
-        <p>
-          [Párrafo de cierre: conclusión, pregunta abierta o llamada a la reflexión.
-          No hace falta un cierre grandilocuente. Basta con que resuene.]
-        </p>
+        <p>[Otro párrafo de desarrollo.]</p>
 
-        <!-- FIRMA ─────────────────────────────────────── -->
-        <div style="margin-top: var(--space-3xl); padding-top: var(--space-xl); border-top: 1px solid var(--color-border); display: flex; align-items: center; gap: var(--space-lg);">
-          <div class="mini-bio__foto-placeholder" style="width: 56px; height: 56px; flex-shrink: 0;" aria-hidden="true">
-            <span style="font-size: 0.6rem; color: var(--color-verde-dark);">Foto</span>
-          </div>
-          <div>
-            <p style="font-size: var(--text-sm); font-weight: 500; margin-bottom: 2px;">Marilena Sánchez</p>
-            <p style="font-size: var(--text-sm); color: var(--color-text-muted); margin: 0; line-height: 1.5;">
-              Venezolana en Canarias. 15 años liderando equipos.
-              Escribe sobre comunicación, personas y lo que pasa dentro de las organizaciones.
-            </p>
-          </div>
+        <!-- BLOQUE ACENTO: para consejos, datos importantes o conclusiones parciales -->
+        <div class="bloque-acento">
+          <p><strong>[Nombre del consejo o concepto.]</strong> Desarrollo del insight,
+          consejo o advertencia. Máximo 3–4 líneas. No para párrafos normales.</p>
         </div>
 
-        <!-- NAVEGACIÓN ENTRE ARTÍCULOS ────────────────── -->
-        <nav style="margin-top: var(--space-2xl); padding-top: var(--space-xl); border-top: 1px solid var(--color-border); display: flex; justify-content: space-between; gap: var(--space-xl);" aria-label="Artículo anterior y siguiente">
-          <div>
-            <!-- <a href="[slug-anterior].html" style="font-size: var(--text-sm); color: var(--color-text-muted);">← [Título anterior]</a> -->
-          </div>
-          <div style="text-align: right;">
-            <!-- <a href="[slug-siguiente].html" style="font-size: var(--text-sm); color: var(--color-text-muted);">[Título siguiente] →</a> -->
-          </div>
-        </nav>
+        <p>[Continúa el desarrollo de la sección.]</p>
 
-      </div>
+        <!-- Segundo blockquote — idea contraintuitiva o reveladora -->
+        <blockquote>
+          <p>[Segunda frase potente. Una idea contraintuitiva del artículo.]</p>
+        </blockquote>
+
+        <!-- H2: highlight turquesa si apunta a solución o camino -->
+        <h2>[Segundo titular con <span class="highlight">solución o camino</span>]</h2>
+
+        <p>[Desarrollo...]</p>
+
+        <p>[Más desarrollo...]</p>
+
+        <!-- Tercer blockquote — opcional, cerca del cierre si merece la pena -->
+        <blockquote>
+          <p>[Tercera frase potente. El mensaje que quieres que el lector se lleve.]</p>
+        </blockquote>
+
+        <!-- H2 de cierre — sin highlight si no hay palabra que lo merezca -->
+        <h2>[Titular de cierre]</h2>
+
+        <p>[Último bloque argumental.]</p>
+
+        <p><strong>[Frase de cierre contundente. Va sola en su párrafo, en negrita.
+        No hace falta un gran final. Basta con que resuene.]</strong></p>
+
+      </div><!-- /articulo__cuerpo -->
+
+      <!-- ===== NEWSLETTER CTA =============================== -->
+      <section class="newsletter" style="margin-top: var(--space-4xl);">
+        <div class="newsletter__inner">
+          <div class="newsletter__copy">
+            <h2>Una reflexión así,<br><span class="highlight">cada martes.</span></h2>
+            <p>Sin algoritmo. Sin ruido. Solo lo que vale la pena pensar esta semana.</p>
+          </div>
+          <form class="newsletter__form" action="https://marysanchez.substack.com/api/v1/free" method="post">
+            <label for="email-art" class="sr-only">Tu dirección de correo electrónico</label>
+            <input type="email" id="email-art" name="email" placeholder="Tu correo" autocomplete="email" required>
+            <button type="submit">UNIRME A LA NEWSLETTER →</button>
+          </form>
+        </div>
+      </section>
+
+      <!-- ===== ARTÍCULOS RELACIONADOS ====================== -->
+      <!-- 2 artículos relacionados. El JS carga sus imágenes automáticamente. -->
+      <section class="relacionados" style="margin-top: var(--space-3xl);">
+        <div class="container--texto">
+          <p class="relacionados__label">Más artículos</p>
+          <div class="relacionados__lista">
+
+            <a class="rel-card" href="[slug-relacionado-1].html">
+              <div class="rel-card__img-placeholder" aria-hidden="true"></div>
+              <div class="rel-card__body">
+                <span class="tag tag--accent">[Categoría]</span>
+                <p class="rel-card__titulo">[Título del artículo relacionado 1]</p>
+                <p class="rel-card__extracto">[Extracto de 1–2 frases que complementen el artículo actual.]</p>
+              </div>
+            </a>
+
+            <a class="rel-card" href="[slug-relacionado-2].html">
+              <div class="rel-card__img-placeholder" aria-hidden="true"></div>
+              <div class="rel-card__body">
+                <span class="tag tag--accent">[Categoría]</span>
+                <p class="rel-card__titulo">[Título del artículo relacionado 2]</p>
+                <p class="rel-card__extracto">[Extracto de 1–2 frases que complementen el artículo actual.]</p>
+              </div>
+            </a>
+
+          </div>
+        </div>
+      </section>
+
     </article>
-
-    <!-- ===== NEWSLETTER ==================================== -->
-    <section class="newsletter-bloque">
-      <div class="container text-centro">
-        <h2 class="newsletter-bloque__titulo">Si esto te ha resonado, hay más.</h2>
-        <p class="newsletter-bloque__subtitulo">Sin algoritmos. Sin ruido. Solo cuando valga la pena.</p>
-        <div class="form-email">
-          <label for="email-art" class="sr-only">Tu correo electrónico</label>
-          <input type="email" id="email-art" name="email" placeholder="tu@email.com" autocomplete="email">
-          <button class="btn btn--mostaza" type="submit">Suscribirme</button>
-        </div>
-        <p class="newsletter-nota">Sin spam. Cancela cuando quieras.</p>
-      </div>
-    </section>
-
   </main>
 
-  <!-- ===== FOOTER ========================================== -->
+  <!-- ===== FOOTER ========================================= -->
   <footer class="footer">
     <div class="footer__inner">
-      <div>
-        <a href="../index.html" class="footer__logo">internamente hablando</a>
-        <p class="footer__tagline">Comunicación, liderazgo y equipos.<br>Lo que pasa dentro de las organizaciones.</p>
+      <div class="footer__marca">
+        <a href="../index.html" class="footer__logo" aria-label="Internamente Hablando — Inicio">
+          <img src="../assets/logos/logo_blanco.svg" alt="Internamente Hablando" height="40" loading="lazy">
+        </a>
+        <p>The Intellectual Curator. Conecta conversaciones internas y realidades organizacionales.</p>
       </div>
-      <ul class="footer__links">
-        <li><a href="../blog/index.html">Blog</a></li>
-        <li><a href="../sobre-mi/index.html">Sobre mí</a></li>
-        <li><a href="../colaboraciones/index.html">Colaboraciones</a></li>
-        <li><a href="../newsletter/index.html">Newsletter</a></li>
-        <li><a href="../recursos/index.html">Recursos</a></li>
-      </ul>
+      <nav class="footer__nav" aria-label="Explorar">
+        <strong>EXPLORAR</strong>
+        <a href="../blog/index.html">Artículos</a>
+        <a href="../recursos/index.html">Temas</a>
+        <a href="../sobre-mi/index.html">Acerca de</a>
+      </nav>
+      <nav class="footer__nav" aria-label="Conectar">
+        <strong>CONECTAR</strong>
+        <a href="../newsletter/index.html">Newsletter</a>
+        <a href="../colaboraciones/index.html">Colaboraciones</a>
+      </nav>
     </div>
-    <p class="footer__copy">© <span id="year"></span> Marilena Sánchez — internamentehablando.com</p>
+    <div class="footer__bottom">
+      <p>© <span id="year"></span> · INTERNAMENTE HABLANDO · Marilena Sánchez</p>
+    </div>
   </footer>
 
   <script src="../js/main.js"></script>

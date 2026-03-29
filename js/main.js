@@ -34,6 +34,29 @@ if (navToggle && navLinks) {
   });
 }
 
+// Dropdown nav — toggle en móvil
+(function initDropdown() {
+  document.querySelectorAll('.nav__item--dropdown').forEach(function (item) {
+    var trigger = item.querySelector('.nav__dropdown-trigger');
+    if (!trigger) return;
+    trigger.addEventListener('click', function (e) {
+      // Solo actúa como toggle en móvil (hover se encarga en desktop)
+      if (window.innerWidth > 768) return;
+      var isOpen = item.classList.toggle('is-open');
+      trigger.setAttribute('aria-expanded', isOpen);
+      e.stopPropagation();
+    });
+  });
+  // Cerrar al hacer clic fuera
+  document.addEventListener('click', function () {
+    document.querySelectorAll('.nav__item--dropdown.is-open').forEach(function (item) {
+      item.classList.remove('is-open');
+      var trigger = item.querySelector('.nav__dropdown-trigger');
+      if (trigger) trigger.setAttribute('aria-expanded', 'false');
+    });
+  });
+})();
+
 // Marcar enlace activo según la URL
 (function markActiveLink() {
   const path = window.location.pathname;
@@ -196,6 +219,72 @@ if (navToggle && navLinks) {
 
   // Llamada inicial para posicionar textos en scroll = 0
   scrub();
+})();
+
+// ============================================================
+// IMÁGENES DE ARTÍCULOS
+// Vincula automáticamente la imagen correcta a cada tarjeta
+// extrayendo el slug del enlace más cercano al placeholder.
+// Escalable: añadir un artículo nuevo en cualquier página
+// no requiere tocar este archivo.
+// ============================================================
+(function initArticleImages() {
+
+  // Ruta base hacia assets/img/blog/articles/ relativa a esta página.
+  // Usa el href del CSS como ancla: siempre apunta a 'css/styles.css' desde la raíz,
+  // lo que funciona tanto en file:// local como en servidor, independientemente
+  // de la profundidad de carpetas o la ruta del sistema operativo.
+  var cssLink = document.querySelector('link[href*="css/styles.css"]');
+  if (!cssLink) return;
+  var ROOT    = cssLink.getAttribute('href').replace('css/styles.css', '');
+  var IMG_BASE = ROOT + 'assets/img/blog/articles/';
+
+  // Extrae el slug del href (acepta rutas relativas con o sin carpeta)
+  function slugFromHref(href) {
+    if (!href || !href.endsWith('.html')) return null;
+    return href.split('/').pop().replace('.html', '');
+  }
+
+  // Reemplaza un placeholder por un <img>
+  function replacePlaceholder(placeholder, slug, cssClass) {
+    var img    = document.createElement('img');
+    img.src    = IMG_BASE + slug + '.jpg';
+    img.alt    = '';          // decorativa: el título y texto ya describen el artículo
+    img.loading = 'lazy';
+    if (cssClass) img.className = cssClass;
+    placeholder.replaceWith(img);
+  }
+
+  // Encuentra el enlace al artículo más cercano a un elemento
+  function findLink(el) {
+    return el.closest('a[href]')
+        || (function () {
+          var c = el.closest('.post-card, article, .featured__inner, .relacionados__lista');
+          return c ? c.querySelector('a[href$=".html"]') : null;
+        })();
+  }
+
+  // 1 · post-card__img-placeholder  →  post-card__img  (blog/index.html)
+  document.querySelectorAll('.post-card__img-placeholder').forEach(function (el) {
+    var link = findLink(el);
+    var slug = slugFromHref(link && link.getAttribute('href'));
+    if (slug) replacePlaceholder(el, slug, 'post-card__img');
+  });
+
+  // 2 · img-placeholder  →  <img>  (home: featured + post-mini)
+  document.querySelectorAll('.img-placeholder').forEach(function (el) {
+    var link = findLink(el);
+    var slug = slugFromHref(link && link.getAttribute('href'));
+    if (slug) replacePlaceholder(el, slug, null);
+  });
+
+  // 3 · rel-card__img-placeholder  →  rel-card__img  (artículos relacionados)
+  document.querySelectorAll('.rel-card__img-placeholder').forEach(function (el) {
+    var card = el.closest('a.rel-card[href]');
+    var slug = slugFromHref(card && card.getAttribute('href'));
+    if (slug) replacePlaceholder(el, slug, 'rel-card__img');
+  });
+
 })();
 
 // ── Reveal-blocks fuera del hero (IntersectionObserver) ──────

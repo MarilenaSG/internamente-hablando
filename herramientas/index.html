@@ -1,0 +1,105 @@
+﻿<!DOCTYPE html>
+<html lang="es">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Recursos — Internamente Hablando</title>
+  <meta name="description" content="Recursos sobre comunicación, liderazgo y equipos. Próximamente.">
+  <meta name="author" content="Marilena Sánchez">
+
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Newsreader:ital,opsz,wght@0,6..72,300;0,6..72,400;0,6..72,500;0,6..72,700;1,6..72,300;1,6..72,400;1,6..72,500&family=Inter:wght@400;500;600&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="../css/styles.css">
+  <link rel="icon" type="image/svg+xml" href="../assets/logos/favicon.svg">
+</head>
+<body>
+
+  <!-- ===== NAV =========================================== -->
+  <nav class="nav" aria-label="Navegación principal">
+    <div class="nav__inner">
+      <a href="../index.html" class="nav__logo" aria-label="Internamente Hablando — Inicio">
+      <img src="../assets/logos/logo_completo.svg" alt="Internamente Hablando" height="32" loading="eager">
+    </a>
+      <button class="nav__toggle" id="navToggle" aria-expanded="false" aria-controls="navLinks" aria-label="Abrir menú">
+        <span></span><span></span><span></span>
+      </button>
+      <ul class="nav__links" id="navLinks" role="list">
+        <li><a href="../blog/index.html">Blog</a></li>
+        <li class="nav__item--dropdown">
+          <button class="nav__dropdown-trigger" aria-expanded="false" aria-haspopup="true">Acerca de <svg class="nav__chevron" xmlns="http://www.w3.org/2000/svg" width="12" height="12" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><polyline points="6 9 12 15 18 9"/></svg></button>
+          <ul class="nav__dropdown" role="list">
+            <li><a href="../sobre-mi/index.html">Acerca de IH</a></li>
+            <li><a href="../colaboraciones/index.html">Colaboraciones</a></li>
+            <li><a href="../herramientas/index.html">Herramientas</a></li>
+          </ul>
+        </li>
+      </ul>
+      <a href="../newsletter/index.html" class="nav__cta">Newsletter</a>
+    </div>
+  </nav>
+
+  <main>
+
+    <section class="hero hero--dark">
+      <div class="hero__inner">
+        <span class="hero__etiqueta">Temas</span>
+        <h1 class="hero__titulo">
+          Herramientas para<br>
+          <span class="highlight--magenta">pensar mejor</span><br>
+          desde dentro.
+        </h1>
+        <p class="hero__subtitulo">
+          Esta sección está en construcción. Pronto encontrarás recursos prácticos
+          sobre comunicación, liderazgo y equipos.
+        </p>
+      </div>
+    </section>
+
+    <section class="seccion">
+      <div class="container">
+        <div class="estado-vacio">
+          <h2 class="estado-vacio__titulo">Próximamente</h2>
+          <p class="estado-vacio__texto">
+            Mientras tanto, no te pierdas las últimas reflexiones en el blog
+            o suscríbete a la newsletter.
+          </p>
+          <div style="display: flex; gap: var(--space-md); justify-content: center; flex-wrap: wrap;">
+            <a href="../blog/index.html" class="btn btn--secundario">Ir al blog</a>
+            <a href="../newsletter/index.html" class="btn btn--primario">Suscribirme</a>
+          </div>
+        </div>
+      </div>
+    </section>
+
+  </main>
+
+  <!-- ===== FOOTER ========================================== -->
+  <footer class="footer">
+    <div class="footer__inner">
+      <div class="footer__marca">
+        <a href="../index.html" class="footer__logo" aria-label="Internamente Hablando — Inicio">
+        <img src="../assets/logos/logo_blanco.svg" alt="Internamente Hablando" height="40" loading="lazy">
+      </a>
+        <p>The Intellectual Curator. Conecta conversaciones internas y realidades organizacionales.</p>
+      </div>
+      <nav class="footer__nav" aria-label="Explorar">
+        <strong>EXPLORAR</strong>
+        <a href="../blog/index.html">Artículos</a>
+        <a href="../recursos/index.html">Temas</a>
+        <a href="../sobre-mi/index.html">Acerca de</a>
+      </nav>
+      <nav class="footer__nav" aria-label="Conectar">
+        <strong>CONECTAR</strong>
+        <a href="../newsletter/index.html">Newsletter</a>
+        <a href="../colaboraciones/index.html">Colaboraciones</a>
+      </nav>
+    </div>
+    <div class="footer__bottom">
+      <p>© <span id="year"></span> · INTERNAMENTE HABLANDO · Marilena Sánchez</p>
+    </div>
+  </footer>
+
+  <script src="../js/main.js"></script>
+</body>
+</html>

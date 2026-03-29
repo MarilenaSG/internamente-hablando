@@ -3,28 +3,42 @@
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>Sobre mí — Internamente Hablando</title>
-  <meta name="description" content="Soy Marilena Sánchez. Venezolana en Canarias, directiva con 15 años liderando equipos y una curiosidad que no sabe quedarse quieta.">
+  <title>Sobre IH — Internamente Hablando</title>
+  <meta name="description" content="Internamente Hablando es el sitio donde se dice lo que en tu empresa nadie dice. Comunicación interna para organizaciones de cualquier tamaño.">
   <meta name="author" content="Marilena Sánchez">
+  <meta property="og:title" content="Sobre IH — Internamente Hablando">
+  <meta property="og:description" content="El sitio donde se dice lo que en tu empresa nadie dice.">
+  <meta property="og:type" content="website">
+  <meta property="og:url" content="https://internamentehablando.com/sobre-ih/index.html">
 
   <link rel="preconnect" href="https://fonts.googleapis.com">
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
   <link href="https://fonts.googleapis.com/css2?family=Newsreader:ital,opsz,wght@0,6..72,300;0,6..72,400;0,6..72,500;0,6..72,700;1,6..72,300;1,6..72,400;1,6..72,500&family=Inter:wght@400;500;600&display=swap" rel="stylesheet">
   <link rel="stylesheet" href="../css/styles.css">
+  <link rel="icon" type="image/svg+xml" href="../assets/logos/favicon.svg">
 </head>
 <body>
 
   <!-- ===== NAV =========================================== -->
   <nav class="nav" aria-label="Navegación principal">
     <div class="nav__inner">
-      <a href="../index.html" class="nav__logo"><em>Internamente Hablando</em></a>
-      <button class="nav__toggle" id="navToggle" aria-expanded="false" aria-controls="navLinks" aria-label="Abrir menú">
+      <a href="../index.html" class="nav__logo" aria-label="Internamente Hablando — Inicio">
+      <img src="../assets/logos/logo_completo.svg" alt="Internamente Hablando" height="32" loading="eager">
+    </a>
+      <button class="nav__toggle" id="navToggle" aria-expanded="false"
+              aria-controls="navLinks" aria-label="Abrir menú">
         <span></span><span></span><span></span>
       </button>
       <ul class="nav__links" id="navLinks" role="list">
-        <li><a href="../blog/index.html">Artículos</a></li>
-        <li><a href="../recursos/index.html">Temas</a></li>
-        <li><a href="../sobre-mi/index.html">Acerca de</a></li>
+        <li><a href="../blog/index.html">Blog</a></li>
+        <li class="nav__item--dropdown">
+          <button class="nav__dropdown-trigger" aria-expanded="false" aria-haspopup="true">Acerca de <svg class="nav__chevron" xmlns="http://www.w3.org/2000/svg" width="12" height="12" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><polyline points="6 9 12 15 18 9"/></svg></button>
+          <ul class="nav__dropdown" role="list">
+            <li><a href="../sobre-mi/index.html" class="activo">Acerca de IH</a></li>
+            <li><a href="../colaboraciones/index.html">Colaboraciones</a></li>
+            <li><a href="../herramientas/index.html">Herramientas</a></li>
+          </ul>
+        </li>
       </ul>
       <a href="../newsletter/index.html" class="nav__cta">Newsletter</a>
     </div>
@@ -32,150 +46,168 @@
 
   <main>
 
-    <!-- ===== HEADER ======================================= -->
-    <section class="hero hero--dark">
+    <!-- ===== HERO ========================================= -->
+    <section class="hero hero--dark hero--sobre-mi" style="background-image: url('../assets/img/sobre-mi.jpg'); background-size: cover; background-position: center center; min-height: calc(100vh - 64px);">
       <div class="hero__inner">
-        <span class="hero__etiqueta">Sobre mí</span>
+        <span class="hero__etiqueta">Sobre IH</span>
         <h1 class="hero__titulo">
-          Soy Marilena.<br>
-          Y llegué hasta aquí<br>
-          <span class="highlight--magenta">sin mapa.</span>
+          Bienvenido al sitio<br>
+          donde se dice<br>
+          lo que en tu empresa<br>
+          <span class="highlight">nadie dice.</span>
         </h1>
+        <a href="#contenido" class="btn btn--rosa">Descubre IH →</a>
       </div>
     </section>
 
-    <!-- ===== INTRO CON FOTO ================================ -->
-    <section class="seccion">
+    <!-- ===== BLOQUE 1 — ORIGEN ============================ -->
+    <section id="contenido" class="seccion">
       <div class="container--texto">
-        <div class="sobre-mi__foto-placeholder" aria-hidden="true">
-          <span style="font-size: var(--text-xs); color: var(--color-verde-dark);">Foto</span>
-        </div>
         <p>
-          A los 18 años emigré de Venezuela a Tenerife sola, sin mis padres, sin un plan claro.
-          Solo con ganas y con la certeza —bastante ingenua, por cierto— de que las cosas se
-          irían resolviendo por el camino. Se resolvieron. Pero no solas.
+          Internamente Hablando no nació de una estrategia de contenidos ni de un plan de negocio.
+          Nació de años observando los mismos patrones repetirse en organizaciones distintas,
+          con estructuras distintas, en sectores distintos.
         </p>
         <p>
-          Lo que no sabía entonces es que ese primer salto al vacío me estaba enseñando algo
-          que luego repetiría muchas veces en mi vida profesional: que cuando no tienes red,
-          aprendes a construirla. Y que la diferencia entre caer y aterrizar casi siempre está
-          en cómo te comunicas —contigo misma y con los demás.
-        </p>
-      </div>
-    </section>
-
-    <!-- ===== TRAYECTORIA — IKEA ============================ -->
-    <section class="sobre-mi__acto">
-      <div class="container--texto">
-        <p class="sobre-mi__etiqueta">IKEA · 2010–2020</p>
-        <h2 class="sobre-mi__acto-titulo">Nueve años aprendiendo a liderar desde dentro</h2>
-        <p>
-          Entré en IKEA con poco más de veinte años. Empecé gestionando el turno de una
-          cafetería y acabé coordinando el lanzamiento de productos para Canarias, Baleares
-          y el Caribe. En esos nueve años aprendí lo más importante que sé sobre liderazgo:
-          que no va de tener autoridad, va de ganarte la confianza.
+          El proyecto mal comunicado que naufragó. El equipo que llevaba meses con una tensión
+          que nadie nombraba. La decisión que llegó de arriba sin contexto y que todo el mundo
+          acató sin entender. El silencio en la reunión que todos interpretaron como acuerdo
+          y no lo era.
         </p>
         <p>
-          Que un equipo que no entiende hacia dónde va no puede darte lo mejor que tiene.
-          Y que cuando tienes que transmitir la visión de una multinacional a personas con
-          culturas, costumbres y códigos completamente distintos —en Tenerife, en Mallorca,
-          en Santo Domingo— no puedes limitarte a repetir el mensaje. Tienes que traducirlo.
-          Hacerlo tuyo primero, y luego hacerlo de ellos.
-        </p>
-        <p>Ahí entendí que comunicar no es hablar. Es conocer a quien tienes delante.</p>
-      </div>
-    </section>
-
-    <!-- ===== TRAYECTORIA — COMESA ========================== -->
-    <section class="sobre-mi__acto">
-      <div class="container--texto">
-        <p class="sobre-mi__etiqueta">Comesa · 2022–2025</p>
-        <h2 class="sobre-mi__acto-titulo">Datos, estrategia y aprender a hablar el idioma del negocio</h2>
-        <p>
-          Después de IKEA llegué a Comesa como responsable de marketing y Business Intelligence.
-          Fue mi primera vez construyendo estrategia B2B desde cero, implementando Salesforce,
-          diseñando sistemas de reporting con Power BI y convirtiendo datos en decisiones.
-        </p>
-        <p>
-          Aprendí que los números también son un lenguaje. Y que una empresa que no sabe leer
-          su propia información tiene exactamente el mismo problema que un equipo que no sabe
-          escucharse: actúa a ciegas, reacciona tarde y pierde oportunidades que estaban ahí, delante.
-        </p>
-        <p>
-          Esa etapa me confirmó algo que sospechaba: que la comunicación interna y la estrategia
-          comercial no son mundos separados. Son el mismo mundo visto desde dos ángulos distintos.
+          Siempre el mismo hilo conductor. Siempre la comunicación detrás de lo que funcionaba
+          y de lo que no.
         </p>
       </div>
     </section>
 
-    <!-- ===== TRAYECTORIA — LET IT FLOWER ================== -->
-    <section class="sobre-mi__acto">
+    <!-- ===== BLOQUE 2 — LA PROPUESTA ====================== -->
+    <section class="seccion seccion--alt">
       <div class="container--texto">
-        <p class="sobre-mi__etiqueta">Let it Flower · 2020–2022</p>
-        <h2 class="sobre-mi__acto-titulo">El paréntesis que más me enseñó</h2>
-        <p>
-          En 2020, en plena pandemia, creé Let it Flower: una marca de diseño floral y decoración
-          de bodas, con tienda de flores por suscripción online. Desde cero. En un mercado que no
-          existía en Canarias. En tres meses.
-        </p>
-        <p>
-          Lo que más me enseñó no fue montar la tienda en Shopify ni diseñar la marca. Fue trabajar
-          con parejas en uno de los momentos más importantes de sus vidas. Aprendí a vender proyectos,
-          no productos. A escuchar lo que la gente no sabe cómo pedirte. A transmitir confianza
-          cuando hay mucho en juego emocionalmente.
-        </p>
-        <p>
-          Pocos públicos son más exigentes que dos personas que se van a casar —y pocas experiencias
-          me han enseñado más sobre la comunicación como acto de cuidado.
-        </p>
-        <p>
-          Este episodio también me recuerda quién soy cuando me dejan hacer: alguien que aprende
-          haciendo y que no le tiene miedo al vacío.
-        </p>
-      </div>
-    </section>
-
-    <!-- ===== TRAYECTORIA — HOY ============================ -->
-    <section class="sobre-mi__acto">
-      <div class="container--texto">
-        <p class="sobre-mi__etiqueta">Te Quiero · 2025–actualidad</p>
-        <h2 class="sobre-mi__acto-titulo">Hoy</h2>
-        <p>
-          Hoy soy Sales &amp; Product Manager en Te Quiero, una cadena de 18 joyerías en Tenerife.
-          Gestiono compras, ventas, producto y un equipo de cinco personas. Trabajo con datos,
-          con proveedores, con procesos y con personas —que es donde siempre acaba estando el
-          verdadero trabajo.
-        </p>
-        <p>
-          En paralelo, estudio el Grado en Comunicación en la UOC. No para empezar, sino para
-          profundizar. Porque tengo una característica que me define bastante bien: cuando algo
-          me interesa, necesito entenderlo hasta el fondo. Y cuando lo entiendo, necesito compartirlo.
-        </p>
-        <p>
-          La música y los libros son mi forma de desconectar —y, curiosamente, de reconectar con
-          ideas que luego acaban en el blog.
-        </p>
-      </div>
-    </section>
-
-    <!-- ===== POR QUÉ ESCRIBO ============================== -->
-    <section class="seccion seccion--verde">
-      <div class="container--texto">
-        <span style="font-size: var(--text-xs); font-weight: 500; text-transform: uppercase; letter-spacing: 0.1em; color: var(--color-verde-dark);">Por qué escribo</span>
-        <h2 style="font-size: var(--text-2xl); margin: var(--space-md) 0 var(--space-xl);">
-          Internamente Hablando nació de todo ese recorrido.
+        <h2>
+          Darle nombre a lo que
+          <span class="highlight--magenta">ya sabes</span>
         </h2>
         <p>
-          De haber estado en reuniones donde nadie decía lo que pensaba. De haber visto proyectos
-          hundirse por un malentendido que nadie quiso resolver. De haber liderado equipos diversos
-          y haber aprendido —a veces a golpes— que la comunicación no es un añadido al trabajo:
-          es el trabajo.
+          IH no es un manual. No tiene un método con nombre propio ni una certificación que vender.
+          No escribe para empresas con departamento de comunicación ni para directivos con
+          presupuesto para consultores.
         </p>
         <p>
-          No escribo para dar lecciones. Escribo para pensar en voz alta, compartir lo que he visto
-          desde dentro y, con suerte, ayudar a alguien a nombrar algo que ya sabía pero que no había
-          sabido decir todavía.
+          Escribe para quien trabaja con otras personas y ha sentido alguna vez que algo no
+          funciona pero no sabe exactamente qué.
         </p>
+
+        <blockquote>
+          <p>No hace falta tener un organigrama. Hace falta tener la sensación.</p>
+        </blockquote>
+
+        <p>
+          El lector de IH ya lo vive. Ya ha estado en esa reunión, ya ha dado esas instrucciones
+          por entendidas, ya ha interpretado ese silencio como acuerdo. IH no enseña algo que
+          no se sabe. Da las palabras para lo que ya se conoce. Y con esas palabras, algo se
+          puede empezar a mover.
+        </p>
+      </div>
+    </section>
+
+    <!-- ===== BLOQUE 3 — EL TAMAÑO NO IMPORTA ============= -->
+    <section class="seccion">
+      <div class="container--texto">
+        <h2>
+          Para la empresa de
+          <span class="highlight--magenta">cuatro personas</span>
+          también
+        </h2>
+        <p>
+          Hay una idea instalada que dice que la comunicación interna es cosa de grandes empresas.
+          De departamentos, de presupuestos, de planta noble.
+        </p>
+        <p>
+          Es mentira. Y es una mentira cara.
+        </p>
+        <p>
+          Los problemas de comunicación no escalan con el tamaño de la empresa. Escalan con el
+          número de personas. El número mínimo para que algo falle es dos.
+        </p>
+
+        <blockquote>
+          <p>El taller de cinco personas tiene los mismos problemas estructurales que la multinacional.
+          Solo que sin presupuesto para ignorarlos.</p>
+        </blockquote>
+
+        <p>
+          El autónomo que acaba de contratar a su primera persona. La empresa familiar donde
+          todos saben lo que hay pero nadie lo dice. El mando intermedio que absorbe en silencio
+          lo que no puede gestionar. El equipo pequeño donde <em>"aquí nos conocemos todos"</em>
+          se ha convertido en la excusa perfecta para no tener ninguna conversación difícil.
+        </p>
+        <p>
+          Para todos ellos está IH. No como contenido adaptado a regañadientes. Sino porque
+          su realidad ya estaba aquí desde el principio.
+        </p>
+      </div>
+    </section>
+
+    <!-- ===== BLOQUE 4 — CÓMO ES IH ======================= -->
+    <section class="seccion seccion--verde">
+      <div class="container--texto">
+        <h2>
+          Sin academicismos. Sin recetas.
+          Con <span class="highlight">honestidad.</span>
+        </h2>
+        <p>
+          IH tiene criterio y lo defiende. Pero no lo esconde detrás de jerga técnica ni de
+          estudios citados a medias. Si algo no se puede explicar sin vocabulario especializado,
+          es que todavía no se ha entendido del todo.
+        </p>
+        <p>
+          No juzga a los personajes. Entiende los sistemas que los producen.
+        </p>
+        <p>
+          No promete transformaciones. Ofrece claridad. Y confía en que la claridad,
+          por sí sola, ya mueve cosas.
+        </p>
+
+        <blockquote>
+          <p>IH habla desde el reconocimiento, no desde la autoridad. Primero dice: <em>esto también
+          lo hemos visto</em>. Luego: <em>esto es lo que hay detrás</em>.</p>
+        </blockquote>
+      </div>
+    </section>
+
+    <!-- ===== BLOQUE 5 — LA AUTORA ========================= -->
+    <section class="seccion seccion--autora">
+      <div class="container--texto">
+        <div class="autora__grid">
+
+          <div class="sobre-mi__foto-placeholder" aria-hidden="true"></div>
+
+          <div>
+            <h2>Quién está detrás</h2>
+            <p>
+              Soy Marilena Sánchez, la voz de Internamente Hablando.
+            </p>
+            <p>
+              He pasado los últimos quince años dentro de organizaciones muy distintas —
+              grandes marcas internacionales, empresas familiares, mi propio negocio.
+              Liderando equipos, gestionando estrategia, trabajando con datos y con personas.
+              Y en cada contexto, comprobando lo mismo: que la comunicación siempre era el
+              factor que lo explicaba todo. Lo que funcionaba y lo que no.
+            </p>
+            <p>
+              Estudio Comunicación en la UOC — no para empezar, sino para profundizar en algo
+              que llevo años practicando. Soy de las que conectan puntos que otros mantienen
+              separados. Me muevo igual de cómoda entre datos, estrategia, creatividad y personas,
+              y esa transversalidad es exactamente lo que le da forma a IH.
+            </p>
+            <p>
+              <strong>Sigo aprendiendo. Sigo aplicando. Sigo encontrando en cada empresa
+              los mismos patrones que me trajeron hasta aquí.</strong>
+            </p>
+          </div>
+
+        </div>
       </div>
     </section>
 
@@ -183,13 +215,14 @@
     <section class="seccion text-centro">
       <div class="container--texto">
         <h2 style="font-size: var(--text-2xl); margin-bottom: var(--space-md);">
-          ¿Quieres que trabajemos juntas?
+          ¿Quieres que IH esté en tu empresa,
+          evento o medio?
         </h2>
         <p style="color: var(--color-text-muted); margin-bottom: var(--space-xl);">
-          Si te interesa contar con mi experiencia para una charla, una formación,
-          un podcast o un artículo, cuéntame en qué estás pensando.
+          Si te interesa contar con la perspectiva de IH para una charla, una formación,
+          un podcast o una colaboración editorial, cuéntanos en qué estás pensando.
         </p>
-        <a href="../colaboraciones/index.html" class="btn btn--primario">Ver colaboraciones</a>
+        <a href="../colaboraciones/index.html" class="btn btn--primario">Ver colaboraciones →</a>
       </div>
     </section>
 
@@ -199,7 +232,9 @@
   <footer class="footer">
     <div class="footer__inner">
       <div class="footer__marca">
-        <a href="../index.html" class="footer__logo"><em>Internamente<br>Hablando</em></a>
+        <a href="../index.html" class="footer__logo" aria-label="Internamente Hablando — Inicio">
+        <img src="../assets/logos/logo_blanco.svg" alt="Internamente Hablando" height="40" loading="lazy">
+      </a>
         <p>The Intellectual Curator. Conecta conversaciones internas y realidades organizacionales.</p>
       </div>
       <nav class="footer__nav" aria-label="Explorar">
@@ -220,5 +255,6 @@
   </footer>
 
   <script src="../js/main.js"></script>
+
 </body>
 </html>
