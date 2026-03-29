@@ -12,66 +12,6 @@
   <link href="https://fonts.googleapis.com/css2?family=Newsreader:ital,opsz,wght@0,6..72,300;0,6..72,400;0,6..72,500;0,6..72,700;1,6..72,300;1,6..72,400;1,6..72,500&family=Inter:wght@400;500;600&display=swap" rel="stylesheet">
   <link rel="stylesheet" href="../css/styles.css">
 
-  <style>
-    /* ── Buscador ── */
-    .buscador {
-      position: relative;
-      max-width: 480px;
-    }
-    .buscador__icono {
-      position: absolute;
-      left: 14px;
-      top: 50%;
-      transform: translateY(-50%);
-      width: 18px;
-      height: 18px;
-      color: var(--color-text-light);
-      pointer-events: none;
-    }
-    .buscador__input {
-      width: 100%;
-      padding: 10px 16px 10px 42px;
-      border: 1px solid var(--color-border);
-      border-radius: var(--radius-pill);
-      font-family: var(--font-sans);
-      font-size: var(--text-sm);
-      color: var(--color-text);
-      background: #fff;
-      outline: none;
-      transition: border-color 0.2s;
-    }
-    .buscador__input:focus {
-      border-color: var(--color-verde-dark);
-    }
-    .buscador__input::placeholder {
-      color: var(--color-text-light);
-    }
-    /* ── Barra de controles ── */
-    .blog-controles {
-      display: flex;
-      flex-wrap: wrap;
-      align-items: center;
-      gap: var(--space-lg);
-      padding: var(--space-xl) 0;
-      border-bottom: 1px solid var(--color-border);
-    }
-    /* ── Sin resultados ── */
-    .sin-resultados {
-      display: none;
-      grid-column: 1 / -1;
-      text-align: center;
-      padding: var(--space-3xl) 0;
-      color: var(--color-text-muted);
-      font-size: var(--text-sm);
-    }
-    .sin-resultados.visible {
-      display: block;
-    }
-    @media (max-width: 600px) {
-      .buscador { max-width: 100%; }
-      .blog-controles { flex-direction: column; align-items: flex-start; }
-    }
-  </style>
 </head>
 <body>
 
@@ -94,7 +34,7 @@
   <main>
 
     <!-- ===== HERO ========================================= -->
-    <section class="hero hero--dark">
+    <section class="hero hero--dark hero--blog" style="background-image: url('../assets/img/blog/blog-hero.png'); background-size: cover; background-position: center right;">
       <div class="hero__inner">
         <span class="hero__etiqueta">Artículos</span>
         <h1 class="hero__titulo">
@@ -105,10 +45,12 @@
         <p class="hero__subtitulo">
           Reflexiones sobre comunicación, liderazgo y equipos. Sin teorías de manual. Con casos reales y las preguntas que casi nadie se atreve a hacer.
         </p>
+        <a href="#articulos" class="btn btn--rosa">Quiero leer el blog</a>
       </div>
     </section>
 
     <!-- ===== BUSCADOR + FILTROS =========================== -->
+    <div id="articulos"></div>
     <section>
       <div class="container">
         <div class="blog-controles">
