@@ -433,6 +433,7 @@ blockquote {
   width: 100%;
   aspect-ratio: 16/9;
   object-fit: cover;
+  display: block;
 }
 
 .post-card__img-placeholder {
@@ -627,31 +628,6 @@ blockquote {
 }
 
 /* ── Newsletter CTA ── */
-.newsletter-bloque {
-  background: var(--gradient-signature);
-  padding: var(--space-3xl) 0;
-  text-align: center;
-}
-
-.newsletter-bloque__titulo {
-  font-family: var(--font-serif);
-  font-size: clamp(var(--text-xl), 3vw, var(--text-2xl));
-  font-weight: 400;
-  letter-spacing: -0.02em;
-  color: var(--color-on-primary);
-  margin-bottom: var(--space-sm);
-}
-
-.newsletter-bloque__subtitulo {
-  font-family: var(--font-sans);
-  font-size: var(--text-base);
-  color: rgba(250, 249, 246, 0.70);
-  margin-bottom: var(--space-xl);
-  max-width: 480px;
-  margin-left: auto;
-  margin-right: auto;
-}
-
 .form-email {
   display: flex;
   gap: var(--space-sm);
@@ -702,27 +678,6 @@ blockquote {
 }
 
 
-/* ── Mini bio (home) ── */
-.mini-bio__foto {
-  width: 200px;
-  height: 200px;
-  border-radius: 50%;
-  object-fit: cover;
-  flex-shrink: 0;
-}
-
-.mini-bio__foto-placeholder {
-  width: 200px;
-  height: 200px;
-  border-radius: 50%;
-  background-color: var(--color-surface-high);
-  display: flex;
-  align-items: center;
-  justify-content: center;
-  flex-shrink: 0;
-}
-
-
 /* ── Sobre mí ── */
 .sobre-mi__foto-placeholder {
   width: 100%;
@@ -734,29 +689,6 @@ blockquote {
   align-items: center;
   justify-content: center;
   margin-bottom: var(--space-xl);
-}
-
-.sobre-mi__acto {
-  padding: var(--space-2xl) 0;
-  background-color: var(--color-surface-low);
-}
-
-.sobre-mi__etiqueta {
-  font-family: var(--font-sans);
-  font-size: var(--text-xs);
-  font-weight: 600;
-  text-transform: uppercase;
-  letter-spacing: 0.1em;
-  color: var(--color-metadata);
-  margin-bottom: var(--space-sm);
-}
-
-.sobre-mi__acto-titulo {
-  font-family: var(--font-serif);
-  font-size: var(--text-xl);
-  font-style: italic;
-  font-weight: 400;
-  margin-bottom: var(--space-lg);
 }
 
 /* ── Colaboraciones ── */
@@ -838,45 +770,6 @@ blockquote {
 }
 
 .footer__logo:hover { opacity: 0.70; }
-
-.footer__tagline {
-  font-family: var(--font-sans);
-  font-size: var(--text-sm);
-  color: rgba(250, 249, 246, 0.55);
-  max-width: 320px;
-  line-height: 1.65;
-}
-
-.footer__links {
-  display: flex;
-  flex-direction: column;
-  gap: var(--space-sm);
-  list-style: none;
-  text-align: right;
-}
-
-.footer__links a {
-  font-family: var(--font-sans);
-  font-size: var(--text-sm);
-  color: rgba(250, 249, 246, 0.55);
-  transition: color var(--transition);
-}
-
-.footer__links a:hover { color: var(--color-on-primary); }
-
-.footer__copy {
-  border-top: 1px solid rgba(250, 249, 246, 0.10);
-  margin-top: var(--space-2xl);
-  padding-top: var(--space-lg);
-  max-width: var(--max-width);
-  margin-left: auto;
-  margin-right: auto;
-  padding-left: var(--space-xl);
-  padding-right: var(--space-xl);
-  font-family: var(--font-sans);
-  font-size: var(--text-xs);
-  color: rgba(250, 249, 246, 0.30);
-}
 
 /* ── Estado vacío ── */
 .estado-vacio {
@@ -961,22 +854,12 @@ blockquote {
     text-align: left;
   }
 
-  .mini-bio__foto,
-  .mini-bio__foto-placeholder {
-    margin: 0 auto;
-    width: 160px;
-    height: 160px;
-  }
-
   .colaboracion-item__inner {
     grid-template-columns: 1fr;
     gap: var(--space-sm);
   }
 
   .footer__inner { grid-template-columns: 1fr; }
-  .footer__links { text-align: left; }
-
-  .sobre-mi__acto { padding: var(--space-xl) 0; }
 
   .form-email {
     flex-direction: column;
@@ -1833,7 +1716,7 @@ blockquote {
 
 /* ── ARTÍCULOS RELACIONADOS — nuevo layout horizontal ── */
 .relacionados {
-  padding: var(--space-3xl) 0 var(--space-4xl);
+  padding: var(--space-3xl) 0 var(--space-xl);
   background: var(--color-surface-low);
 }
 

@@ -13,32 +13,12 @@
   <link rel="stylesheet" href="../css/styles.css">
 
   <link rel="icon" type="image/svg+xml" href="../assets/logos/favicon.svg">
+  <script src="../js/components.js" defer></script>
 </head>
 <body>
 
   <!-- ===== NAV =========================================== -->
-  <nav class="nav" aria-label="Navegación principal">
-    <div class="nav__inner">
-      <a href="../index.html" class="nav__logo" aria-label="Internamente Hablando — Inicio">
-      <img src="../assets/logos/logo_completo.svg" alt="Internamente Hablando" height="32" loading="eager">
-    </a>
-      <button class="nav__toggle" id="navToggle" aria-expanded="false" aria-controls="navLinks" aria-label="Abrir menú">
-        <span></span><span></span><span></span>
-      </button>
-      <ul class="nav__links" id="navLinks" role="list">
-        <li><a href="../blog/index.html">Blog</a></li>
-        <li class="nav__item--dropdown">
-          <button class="nav__dropdown-trigger" aria-expanded="false" aria-haspopup="true">Acerca de <svg class="nav__chevron" xmlns="http://www.w3.org/2000/svg" width="12" height="12" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><polyline points="6 9 12 15 18 9"/></svg></button>
-          <ul class="nav__dropdown" role="list">
-            <li><a href="../sobre-mi/index.html">Acerca de IH</a></li>
-            <li><a href="../colaboraciones/index.html">Colaboraciones</a></li>
-            <li><a href="../herramientas/index.html">Herramientas</a></li>
-          </ul>
-        </li>
-      </ul>
-      <a href="../newsletter/index.html" class="nav__cta">Newsletter</a>
-    </div>
-  </nav>
+  <div data-component="navbar"></div>
 
   <main>
 
@@ -98,10 +78,24 @@
 
         <div class="posts-grid" id="posts-grid" aria-live="polite">
 
+          <article class="post-card" data-category="liderazgo"
+            data-titulo="cuando el organigrama habla antes que tu jefe"
+            data-extracto="los cambios estructurales no fracasan por la estrategia fracasan porque se diseñan sin las personas y se comunican demasiado tarde">
+            <img class="post-card__img" src="../assets/img/blog/articles/cuando-el-organigrama-habla-antes-que-tu-jefe.jpg" alt="Cuando el organigrama habla antes que tu jefe" loading="lazy">
+            <div class="post-card__body">
+              <span class="post-card__categoria">Liderazgo en la práctica</span>
+              <h2 class="post-card__titulo">
+                <a href="cuando-el-organigrama-habla-antes-que-tu-jefe.html">Cuando el organigrama habla antes que tu jefe</a>
+              </h2>
+              <p class="post-card__extracto">Los cambios estructurales no fracasan por la estrategia. Fracasan porque se diseñan sin las personas y se comunican demasiado tarde.</p>
+              <p class="post-card__meta">3 de abril de 2026 · 7 min de lectura</p>
+            </div>
+          </article>
+
           <article class="post-card" data-category="comunicacion"
             data-titulo="hay un problema de comunicación pero nadie sabe cuál"
             data-extracto="el 86% de los fracasos en las empresas se atribuyen a problemas de comunicación el problema es que ese dato no nos dice absolutamente nada útil">
-            <div class="post-card__img-placeholder" aria-hidden="true"></div>
+            <img class="post-card__img" src="../assets/img/blog/articles/hay-un-problema-de-comunicacion-pero-nadie-sabe-cual.jpg" alt="Hay un problema de comunicación (pero nadie sabe cuál)" loading="lazy">
             <div class="post-card__body">
               <span class="post-card__categoria">Comunicación interna</span>
               <h2 class="post-card__titulo">
@@ -115,7 +109,7 @@
           <article class="post-card" data-category="liderazgo"
             data-titulo="mi jefe es un imbécil"
             data-extracto="lo has pensado yo también y si eres jefe alguien lo está pensando de ti ahora mismo la pregunta no es si pasa es qué hacemos con eso">
-            <div class="post-card__img-placeholder" aria-hidden="true"></div>
+            <img class="post-card__img" src="../assets/img/blog/articles/mi-jefe-es-un-imbecil.jpg" alt="Mi jefe es un imbécil" loading="lazy">
             <div class="post-card__body">
               <span class="post-card__categoria">Liderazgo</span>
               <h2 class="post-card__titulo">
@@ -129,7 +123,7 @@
           <article class="post-card" data-category="comunicacion"
             data-titulo="comunicación no es marketing aunque a veces lo parezca"
             data-extracto="la confusión entre comunicación y marketing no es solo terminológica es estratégica y sus consecuencias se pagan caro">
-            <div class="post-card__img-placeholder" aria-hidden="true"></div>
+            <img class="post-card__img" src="../assets/img/blog/articles/comunicacion-no-es-marketing-aunque-lo-parezca.jpg" alt="Comunicación no es marketing. Aunque a veces lo parezca." loading="lazy">
             <div class="post-card__body">
               <span class="post-card__categoria">Comunicación interna</span>
               <h2 class="post-card__titulo">
@@ -143,7 +137,7 @@
           <article class="post-card" data-category="comunicacion"
             data-titulo="el coste real de no decir las cosas a tiempo"
             data-extracto="cuánto cuesta realmente una conversación que no se tiene en proyectos perdidos rotación clima destruido y decisiones tomadas con información incompleta">
-            <div class="post-card__img-placeholder" aria-hidden="true"></div>
+            <img class="post-card__img" src="../assets/img/blog/articles/el-coste-real-de-no-decir-las-cosas-a-tiempo.jpg" alt="El coste real de no decir las cosas a tiempo" loading="lazy">
             <div class="post-card__body">
               <span class="post-card__categoria">Comunicación interna</span>
               <h2 class="post-card__titulo">
@@ -157,7 +151,7 @@
           <article class="post-card" data-category="comunicacion"
             data-titulo="qué es la comunicación interna y por qué no es lo que crees"
             data-extracto="la comunicación interna no es la newsletter de empresa ni el mural de valores en la entrada es algo mucho más cotidiano más difícil y más importante">
-            <div class="post-card__img-placeholder" aria-hidden="true"></div>
+            <img class="post-card__img" src="../assets/img/blog/articles/que-es-la-comunicacion-interna-y-por-que-no-es-lo-que-crees.jpg" alt="Qué es la comunicación interna (y por qué no es lo que crees)" loading="lazy">
             <div class="post-card__body">
               <span class="post-card__categoria">Comunicación interna</span>
               <h2 class="post-card__titulo">
@@ -171,7 +165,7 @@
           <article class="post-card" data-category="comunicacion"
             data-titulo="la conversación que todos posponen y que arreglaría el 80% de los problemas"
             data-extracto="hay una conversación pendiente en cada equipo todo el mundo sabe cuál es nadie la tiene cuánto cuesta posponer lo que hay que decir">
-            <div class="post-card__img-placeholder" aria-hidden="true"></div>
+            <img class="post-card__img" src="../assets/img/blog/articles/la-conversacion-que-todos-posponen.jpg" alt="La conversación que todos posponen" loading="lazy">
             <div class="post-card__body">
               <span class="post-card__categoria">Comunicación interna</span>
               <h2 class="post-card__titulo">
@@ -185,7 +179,7 @@
           <article class="post-card" data-category="equipos"
             data-titulo="por qué los equipos diversos comunican peor al principio y mejor después"
             data-extracto="la diversidad es un valor y también un reto de comunicación real cómo atravesar la fase de fricción sin perder a nadie por el camino">
-            <div class="post-card__img-placeholder" aria-hidden="true"></div>
+            <img class="post-card__img" src="../assets/img/blog/articles/equipos-diversos-comunican-peor-al-principio.jpg" alt="Por qué los equipos diversos comunican peor al principio" loading="lazy">
             <div class="post-card__body">
               <span class="post-card__categoria">Equipos</span>
               <h2 class="post-card__titulo">
@@ -199,7 +193,7 @@
           <article class="post-card" data-category="carrera"
             data-titulo="liderar sin autoridad formal cómo influir cuando no eres el jefe"
             data-extracto="hay personas que mueven equipos sin tener ningún cargo y hay jefes que tienen el título pero nadie les sigue la autoridad real no viene del organigrama">
-            <div class="post-card__img-placeholder" aria-hidden="true"></div>
+            <img class="post-card__img" src="../assets/img/blog/articles/liderar-sin-autoridad-formal-como-influir-sin-ser-el-jefe.jpg" alt="Liderar sin autoridad formal: cómo influir cuando no eres el jefe" loading="lazy">
             <div class="post-card__body">
               <span class="post-card__categoria">Carrera y crecimiento</span>
               <h2 class="post-card__titulo">
@@ -213,7 +207,7 @@
           <article class="post-card" data-category="comunicacion"
             data-titulo="cuando el silencio en una reunión no significa que todos estén de acuerdo"
             data-extracto="el silencio tiene muchos significados ninguno de ellos es todo está bien por qué la gente no habla en las reuniones y qué dice eso de la cultura del equipo">
-            <div class="post-card__img-placeholder" aria-hidden="true"></div>
+            <img class="post-card__img" src="../assets/img/blog/articles/silencio-en-reuniones-no-significa-acuerdo.jpg" alt="Cuando el silencio en una reunión no significa que todos estén de acuerdo" loading="lazy">
             <div class="post-card__body">
               <span class="post-card__categoria">Comunicación interna</span>
               <h2 class="post-card__titulo">
@@ -227,7 +221,7 @@
           <article class="post-card" data-category="equipos"
             data-titulo="lo que pasa en el primer mes de un empleado nuevo y por qué casi nadie lo hace bien"
             data-extracto="el onboarding no es entregar el portátil y presentar al equipo por teams es la primera conversación que tiene una empresa con alguien">
-            <div class="post-card__img-placeholder" aria-hidden="true"></div>
+            <img class="post-card__img" src="../assets/img/blog/articles/primer-mes-empleado-nuevo-onboarding.jpg" alt="Lo que pasa en el primer mes de un empleado nuevo" loading="lazy">
             <div class="post-card__body">
               <span class="post-card__categoria">Equipos</span>
               <h2 class="post-card__titulo">
@@ -241,7 +235,7 @@
           <article class="post-card" data-category="comunicacion"
             data-titulo="comunicación asertiva lo que significa de verdad y lo que no"
             data-extracto="todo el mundo dice que hay que ser asertivo nadie explica qué pasa cuando lo intentas y el entorno no está preparado para recibirlo">
-            <div class="post-card__img-placeholder" aria-hidden="true"></div>
+            <img class="post-card__img" src="../assets/img/blog/articles/comunicacion-asertiva-que-significa-de-verdad.jpg" alt="Comunicación asertiva: lo que significa de verdad (y lo que no)" loading="lazy">
             <div class="post-card__body">
               <span class="post-card__categoria">Comunicación interna</span>
               <h2 class="post-card__titulo">
@@ -255,7 +249,7 @@
           <article class="post-card" data-category="carrera"
             data-titulo="el síndrome del impostor en el liderazgo por qué sientes que en cualquier momento te van a descubrir"
             data-extracto="el síndrome del impostor no desaparece cuando asciendes se vuelve más sofisticado por qué casi todos los líderes sienten en algún momento que los van a descubrir">
-            <div class="post-card__img-placeholder" aria-hidden="true"></div>
+            <img class="post-card__img" src="../assets/img/blog/articles/sindrome-del-impostor-liderazgo.jpg" alt="El síndrome del impostor en el liderazgo" loading="lazy">
             <div class="post-card__body">
               <span class="post-card__categoria">Carrera y crecimiento</span>
               <h2 class="post-card__titulo">
@@ -269,7 +263,7 @@
           <article class="post-card" data-category="carrera"
             data-titulo="cómo decir que no en el trabajo sin que te etiqueten de problemático"
             data-extracto="decir sí a todo no es compromiso es miedo cómo poner límites en el trabajo sin dañar tu reputación ni tus relaciones">
-            <div class="post-card__img-placeholder" aria-hidden="true"></div>
+            <img class="post-card__img" src="../assets/img/blog/articles/como-decir-que-no-en-el-trabajo.jpg" alt="Cómo decir que no en el trabajo sin que te etiqueten de problemático" loading="lazy">
             <div class="post-card__body">
               <span class="post-card__categoria">Carrera y crecimiento</span>
               <h2 class="post-card__titulo">
@@ -283,7 +277,7 @@
           <article class="post-card" data-category="comunicacion"
             data-titulo="la reunión que podría haber sido un correo"
             data-extracto="el problema no es que haya demasiadas reuniones es que nadie sabe para qué sirve cada una cuándo convocar cuándo no y cómo salir vivo de las que no puedes evitar">
-            <div class="post-card__img-placeholder" aria-hidden="true"></div>
+            <img class="post-card__img" src="../assets/img/blog/articles/la-reunion-que-podria-haber-sido-un-correo.jpg" alt="La reunión que podría haber sido un correo" loading="lazy">
             <div class="post-card__body">
               <span class="post-card__categoria">Comunicación interna</span>
               <h2 class="post-card__titulo">
@@ -297,7 +291,7 @@
           <article class="post-card" data-category="liderazgo"
             data-titulo="cómo dar feedback sin que parezca un ataque personal"
             data-extracto="el feedback mal dado no es honestidad es cobardía disfrazada de sinceridad cómo construir una conversación donde el otro pueda escucharte de verdad">
-            <div class="post-card__img-placeholder" aria-hidden="true"></div>
+            <img class="post-card__img" src="../assets/img/blog/articles/como-dar-feedback-sin-que-parezca-un-ataque-personal.jpg" alt="Cómo dar feedback sin que parezca un ataque personal" loading="lazy">
             <div class="post-card__body">
               <span class="post-card__categoria">Liderazgo</span>
               <h2 class="post-card__titulo">
@@ -311,7 +305,7 @@
           <article class="post-card" data-category="comunicacion"
             data-titulo="ventas odia a marketing marketing no entiende a ventas y los dos tienen razón"
             data-extracto="el conflicto entre departamentos que se necesitan mutuamente es tan antiguo como las empresas y tan evitable como lo es spoiler casi nadie lo evita">
-            <div class="post-card__img-placeholder" aria-hidden="true"></div>
+            <img class="post-card__img" src="../assets/img/blog/articles/ventas-odia-a-marketing-y-marketing-no-entiende-a-ventas.jpg" alt="Ventas odia a Marketing. Marketing no entiende a Ventas." loading="lazy">
             <div class="post-card__body">
               <span class="post-card__categoria">Comunicación interna</span>
               <h2 class="post-card__titulo">
@@ -325,7 +319,7 @@
           <article class="post-card" data-category="equipos"
             data-titulo="la brecha generacional cómo comunicarnos sin drama"
             data-extracto="nadie quiere molestar todos creen que lo están haciendo bien pero cada vez que se intenta coordinar algo acaba en malentendidos y silencios incómodos">
-            <div class="post-card__img-placeholder" aria-hidden="true"></div>
+            <img class="post-card__img" src="../assets/img/blog/articles/la-brecha-generacional-como-comunicarnos-sin-drama.jpg" alt="La brecha generacional: cómo comunicarnos sin drama" loading="lazy">
             <div class="post-card__body">
               <span class="post-card__categoria">Equipos</span>
               <h2 class="post-card__titulo">
@@ -339,7 +333,7 @@
           <article class="post-card" data-category="liderazgo"
             data-titulo="jefes que se contradicen"
             data-extracto="trabajar con un jefe incoherente no es solo frustrante es agotador y lo peor es esa duda que cala soy yo el que no entiende o es que esto realmente no tiene sentido">
-            <div class="post-card__img-placeholder" aria-hidden="true"></div>
+            <img class="post-card__img" src="../assets/img/blog/articles/jefes-que-se-contradicen.jpg" alt="Jefes que se contradicen" loading="lazy">
             <div class="post-card__body">
               <span class="post-card__categoria">Liderazgo</span>
               <h2 class="post-card__titulo">
@@ -353,7 +347,7 @@
           <article class="post-card" data-category="comunicacion"
             data-titulo="me ha tocado la crisis de reputación"
             data-extracto="una crisis de reputación en redes no empieza cuando algo explota empieza mucho antes cuando nadie preparó lo que había que preparar">
-            <div class="post-card__img-placeholder" aria-hidden="true"></div>
+            <img class="post-card__img" src="../assets/img/blog/articles/me-ha-tocado-la-crisis-de-reputacion.jpg" alt="Me ha tocado: la crisis de reputación" loading="lazy">
             <div class="post-card__body">
               <span class="post-card__categoria">Comunicación interna</span>
               <h2 class="post-card__titulo">
@@ -377,32 +371,7 @@
   </main>
 
   <!-- ===== FOOTER ========================================== -->
-  <footer class="footer">
-    <div class="footer__inner">
-      <div class="footer__marca">
-        <a href="../index.html" class="footer__logo" aria-label="Internamente Hablando — Inicio">
-        <img src="../assets/logos/logo_blanco.svg" alt="Internamente Hablando" height="40" loading="lazy">
-      </a>
-        <p>The Intellectual Curator. Conecta conversaciones internas y realidades organizacionales.</p>
-      </div>
-      <nav class="footer__nav" aria-label="Explorar">
-        <strong>EXPLORAR</strong>
-        <a href="../blog/index.html">Artículos</a>
-        <a href="../recursos/index.html">Temas</a>
-        <a href="../sobre-mi/index.html">Acerca de</a>
-      </nav>
-      <nav class="footer__nav" aria-label="Conectar">
-        <strong>CONECTAR</strong>
-        <a href="../newsletter/index.html">Newsletter</a>
-        <a href="../colaboraciones/index.html">Colaboraciones</a>
-      </nav>
-    </div>
-    <div class="footer__bottom">
-      <p>© <span id="year"></span> · INTERNAMENTE HABLANDO · Marilena Sánchez</p>
-    </div>
-  </footer>
-
-  <script src="../js/main.js"></script>
+  <div data-component="footer"></div>
   <script>
     (function () {
       var cards        = Array.from(document.querySelectorAll('.post-card[data-category]'));

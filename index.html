@@ -16,32 +16,12 @@
   <link href="https://fonts.googleapis.com/css2?family=Newsreader:ital,wght@0,400;0,600;0,700;1,400;1,600&family=Inter:wght@400;500;600&display=swap" rel="stylesheet">
   <link rel="stylesheet" href="css/styles.css">
   <link rel="icon" type="image/svg+xml" href="assets/logos/favicon.svg">
+  <script src="js/components.js" defer></script>
 </head>
 <body>
 
   <!-- ===== NAV =========================================== -->
-  <nav class="nav" aria-label="Navegación principal">
-    <div class="nav__inner">
-      <a href="index.html" class="nav__logo" aria-label="Internamente Hablando — Inicio">
-      <img src="assets/logos/logo_completo.svg" alt="Internamente Hablando" height="32" loading="eager">
-    </a>
-      <button class="nav__toggle" id="navToggle" aria-expanded="false" aria-controls="navLinks" aria-label="Abrir menú">
-        <span></span><span></span><span></span>
-      </button>
-      <ul class="nav__links" id="navLinks" role="list">
-        <li><a href="blog/index.html">Blog</a></li>
-        <li class="nav__item--dropdown">
-          <button class="nav__dropdown-trigger" aria-expanded="false" aria-haspopup="true">Acerca de <svg class="nav__chevron" xmlns="http://www.w3.org/2000/svg" width="12" height="12" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><polyline points="6 9 12 15 18 9"/></svg></button>
-          <ul class="nav__dropdown" role="list">
-            <li><a href="sobre-mi/index.html">Acerca de IH</a></li>
-            <li><a href="colaboraciones/index.html">Colaboraciones</a></li>
-            <li><a href="herramientas/index.html">Herramientas</a></li>
-          </ul>
-        </li>
-      </ul>
-      <a href="newsletter/index.html" class="nav__cta">Newsletter</a>
-    </div>
-  </nav>
+  <div data-component="navbar"></div>
 
   <!-- ===== SECCIÓN 1 — HERO tipográfico ================== -->
   <section class="hero hero--img">
@@ -144,7 +124,7 @@
     <section class="featured">
       <div class="featured__inner">
         <div class="featured__image">
-          <div class="img-placeholder" aria-hidden="true"></div>
+          <img src="assets/img/blog/articles/mi-jefe-es-un-imbecil.jpg" alt="Mi jefe es un imbécil" loading="lazy">
         </div>
         <div class="featured__content">
           <span class="tag tag--accent">Liderazgo</span>
@@ -170,8 +150,19 @@
       <div class="grid-recientes__inner">
 
         <article class="post-mini post-mini--overlay">
+          <a href="blog/cuando-el-organigrama-habla-antes-que-tu-jefe.html" class="post-mini__card">
+            <img src="assets/img/blog/articles/cuando-el-organigrama-habla-antes-que-tu-jefe.jpg" alt="Cuando el organigrama habla antes que tu jefe" loading="lazy">
+            <div class="post-mini__overlay">
+              <span class="tag tag--sm tag--light">Liderazgo en la práctica</span>
+              <h3 class="post-mini__titulo">Cuando el organigrama habla antes que tu jefe</h3>
+              <span class="post-mini__leer">Leer artículo ↗</span>
+            </div>
+          </a>
+        </article>
+
+        <article class="post-mini post-mini--overlay">
           <a href="blog/hay-un-problema-de-comunicacion-pero-nadie-sabe-cual.html" class="post-mini__card">
-            <div class="img-placeholder img-placeholder--tall" aria-hidden="true"></div>
+            <img src="assets/img/blog/articles/hay-un-problema-de-comunicacion-pero-nadie-sabe-cual.jpg" alt="Hay un problema de comunicación (pero nadie sabe cuál)" loading="lazy">
             <div class="post-mini__overlay">
               <span class="tag tag--sm tag--light">Comunicación interna</span>
               <h3 class="post-mini__titulo">Hay un problema de comunicación (pero nadie sabe cuál)</h3>
@@ -182,21 +173,10 @@
 
         <article class="post-mini post-mini--overlay">
           <a href="blog/comunicacion-no-es-marketing-aunque-lo-parezca.html" class="post-mini__card">
-            <div class="img-placeholder img-placeholder--tall" aria-hidden="true"></div>
+            <img src="assets/img/blog/articles/comunicacion-no-es-marketing-aunque-lo-parezca.jpg" alt="Comunicación no es marketing. Aunque a veces lo parezca." loading="lazy">
             <div class="post-mini__overlay">
               <span class="tag tag--sm tag--light">Comunicación</span>
               <h3 class="post-mini__titulo">Comunicación no es marketing. Aunque a veces lo parezca.</h3>
-              <span class="post-mini__leer">Leer artículo ↗</span>
-            </div>
-          </a>
-        </article>
-
-        <article class="post-mini post-mini--overlay">
-          <a href="blog/el-coste-real-de-no-decir-las-cosas-a-tiempo.html" class="post-mini__card">
-            <div class="img-placeholder img-placeholder--tall" aria-hidden="true"></div>
-            <div class="post-mini__overlay">
-              <span class="tag tag--sm tag--light">Comunicación</span>
-              <h3 class="post-mini__titulo">El coste real de no decir las cosas a tiempo</h3>
               <span class="post-mini__leer">Leer artículo ↗</span>
             </div>
           </a>
@@ -264,48 +244,11 @@
     </section>
 
     <!-- ===== SECCIÓN 6 — NEWSLETTER ========================= -->
-    <section class="newsletter">
-      <div class="newsletter__inner">
-        <div class="newsletter__copy">
-          <h2>Una lectura<br><span class="highlight">semanal</span> que no<br>vas a archivar.</h2>
-          <p>Insights profundos directos a tu bandeja cada martes.</p>
-        </div>
-        <form class="newsletter__form" action="https://marysanchez.substack.com/api/v1/free" method="post">
-          <label for="email-home" class="sr-only">Tu dirección de correo electrónico</label>
-          <input type="email" id="email-home" name="email" placeholder="Tu correo corporativo" autocomplete="email" required>
-          <button type="submit">UNIRME A LA COMUNIDAD →</button>
-        </form>
-      </div>
-    </section>
+    <div data-component="newsletter-cta"></div>
 
   </main>
 
   <!-- ===== FOOTER ========================================== -->
-  <footer class="footer">
-    <div class="footer__inner">
-      <div class="footer__marca">
-        <a href="index.html" class="footer__logo" aria-label="Internamente Hablando — Inicio">
-        <img src="assets/logos/logo_blanco.svg" alt="Internamente Hablando" height="40" loading="lazy">
-      </a>
-        <p>The Intellectual Curator. Conecta conversaciones internas y realidades organizacionales.</p>
-      </div>
-      <nav class="footer__nav" aria-label="Explorar">
-        <strong>EXPLORAR</strong>
-        <a href="blog/index.html">Artículos</a>
-        <a href="recursos/index.html">Temas</a>
-        <a href="sobre-mi/index.html">Acerca de</a>
-      </nav>
-      <nav class="footer__nav" aria-label="Conectar">
-        <strong>CONECTAR</strong>
-        <a href="newsletter/index.html">Newsletter</a>
-        <a href="colaboraciones/index.html">Colaboraciones</a>
-      </nav>
-    </div>
-    <div class="footer__bottom">
-      <p>© <span id="year"></span> · INTERNAMENTE HABLANDO · Marilena Sánchez</p>
-    </div>
-  </footer>
-
-  <script src="js/main.js"></script>
+  <div data-component="footer"></div>
 </body>
 </html>

@@ -1,0 +1,22 @@
+<nav class="nav" aria-label="Navegación principal">
+  <div class="nav__inner">
+    <a href="{{BASE}}index.html" class="nav__logo" aria-label="Internamente Hablando — Inicio">
+      <img src="{{BASE}}assets/logos/logo_completo.svg" alt="Internamente Hablando" height="32" loading="eager">
+    </a>
+    <button class="nav__toggle" id="navToggle" aria-expanded="false" aria-controls="navLinks" aria-label="Abrir menú">
+      <span></span><span></span><span></span>
+    </button>
+    <ul class="nav__links" id="navLinks" role="list">
+      <li><a href="{{BASE}}blog/index.html">Blog</a></li>
+      <li class="nav__item--dropdown">
+        <button class="nav__dropdown-trigger" aria-expanded="false" aria-haspopup="true">Acerca de <svg class="nav__chevron" xmlns="http://www.w3.org/2000/svg" width="12" height="12" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><polyline points="6 9 12 15 18 9"/></svg></button>
+        <ul class="nav__dropdown" role="list">
+          <li><a href="{{BASE}}sobre-mi/index.html">Acerca de IH</a></li>
+          <li><a href="{{BASE}}colaboraciones/index.html">Colaboraciones</a></li>
+          <li><a href="{{BASE}}herramientas/index.html">Herramientas</a></li>
+        </ul>
+      </li>
+    </ul>
+    <a href="{{BASE}}newsletter/index.html" class="nav__cta">Newsletter</a>
+  </div>
+</nav>
